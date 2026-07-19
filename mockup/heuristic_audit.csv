@@ -1,0 +1,24 @@
+ID,Category,Name,Severity,Status,Signal,Recommendation
+1,"Usability Heuristics (Nielsen)","Visibility of System Status",Medium,SIGNAL,"Navigation has 7 links but none marks the current page — no ""you are here"" feedback.","Add aria-current=""page"" to the active nav link and style it distinctly."
+1,"Usability Heuristics (Nielsen)","Visibility of System Status",Medium,SIGNAL,"No live region found, so status updates (saving, loading, results) are announced to nobody.","Add an aria-live=""polite"" or role=""status"" region for async feedback."
+2,"Usability Heuristics (Nielsen)","Match Between System and the Real World",Medium,CLEAR,-,-
+3,"Usability Heuristics (Nielsen)","User Control and Freedom",High,SIGNAL,"No link back to the home page was found — a basic escape route is missing.","Link the logo (or a Home link) to the site root."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+4,"Usability Heuristics (Nielsen)","Consistency and Standards",Medium,SIGNAL,"A <span> is styled as clickable but has no button/link semantics.","Use a real <button>/<a>, or add role=""button"" plus tabindex=""0"" and key handling."
+5,"Usability Heuristics (Nielsen)","Error Prevention",High,CLEAR,-,-
+6,"Usability Heuristics (Nielsen)","Recognition Rather than Recall",Medium,CLEAR,-,-
+7,"Usability Heuristics (Nielsen)","Flexibility and Efficiency of Use",Low,SIGNAL,"No “Skip to content” link — keyboard users must tab through the whole nav on every page.","Add a skip link as the first focusable element, visible on focus."
+7,"Usability Heuristics (Nielsen)","Flexibility and Efficiency of Use",Low,SIGNAL,"Content-heavy page with no search — expert users have no accelerator to jump straight to what they want.","Provide site search so returning users can bypass navigation."
+8,"Usability Heuristics (Nielsen)","Aesthetic and Minimalist Design",Low,SIGNAL,"20 distinct font sizes — the type scale is unstructured, so nothing reads as clearly more important.","Adopt a defined type scale of roughly 5–7 steps."
+9,"Usability Heuristics (Nielsen)","Help Users Recognize, Diagnose, and Recover from Errors",High,CLEAR,-,-
+10,"Usability Heuristics (Nielsen)","Help and Documentation",Low,SIGNAL,"No help, FAQ, support, or contact link found — users who get stuck have nowhere to go.","Add a findable Help/Support link, ideally in the header or footer."
+11,"Accessibility (WCAG)","Colour Contrast (WCAG AA)",High,SIGNAL,"10 element(s) below the WCAG AA contrast minimum (worst: 1.14:1, needs 3.0:1).","Raise contrast to 4.5:1 for normal text, 3:1 for large text (≥24px, or ≥18.66px bold)."
+12,"Accessibility (WCAG)","Image Alternatives (WCAG)",Medium,CLEAR,-,-
+13,"Accessibility (WCAG)","Form Labels & Names (WCAG)",High,CLEAR,-,-
+14,"Accessibility (WCAG)","Target Size (WCAG)",Medium,SIGNAL,"15 target(s) are smaller than 24×24 CSS px (WCAG 2.5.8 AA).","Enlarge to at least 24×24px; 44×44px is the comfortable touch target."
