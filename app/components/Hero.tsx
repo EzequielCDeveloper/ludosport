@@ -9,8 +9,8 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 30% 40%, rgba(220, 53, 69, 0.15) 0%, transparent 70%),
-            radial-gradient(ellipse 60% 50% at 70% 60%, rgba(13, 110, 253, 0.15) 0%, transparent 60%)
+            radial-gradient(ellipse 80% 60% at 30% 40%, color-mix(in srgb, var(--color-red) 15%, transparent) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 50% at 70% 60%, color-mix(in srgb, var(--color-blue) 15%, transparent) 0%, transparent 60%)
           `,
         }}
       />

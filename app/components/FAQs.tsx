@@ -13,7 +13,7 @@ export default function FAQs() {
           Todo lo que necesitas saber antes de empezar
         </p>
 
-        <div className="divide-y divide-[#222]">
+        <div className="divide-y divide-[var(--color-black-3)]">
           {FAQS.map((faq, index) => (
             <details key={index} className="group">
               <summary className="flex cursor-pointer items-center justify-between py-5 font-display text-base tracking-wider uppercase text-left text-white hover:text-[var(--color-yellow)] transition-colors duration-200 list-none [&::-webkit-details-marker]:hidden">

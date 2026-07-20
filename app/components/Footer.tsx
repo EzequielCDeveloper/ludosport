@@ -3,7 +3,7 @@ import { ACADEMY, NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-[#1a1a1a] pt-16 pb-8">
+    <footer className="bg-black border-t border-[var(--color-black-3)] pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-12">
           {/* Brand */}
@@ -67,7 +67,7 @@ export default function Footer() {
                 <a
                   href={ACADEMY.sameAs.facebook}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="text-[var(--color-gray-aa)] hover:text-[var(--color-cyan)] transition-colors p-1.5"
                   aria-label="Facebook (se abre en nueva ventana)"
                 >
@@ -80,7 +80,7 @@ export default function Footer() {
                 <a
                   href={ACADEMY.sameAs.instagram}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="text-[var(--color-gray-aa)] hover:text-[var(--color-cyan)] transition-colors p-1.5"
                   aria-label="Instagram (se abre en nueva ventana)"
                 >
@@ -93,7 +93,7 @@ export default function Footer() {
                 <a
                   href={ACADEMY.sameAs.tiktok}
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   className="text-[var(--color-gray-aa)] hover:text-[var(--color-cyan)] transition-colors p-1.5"
                   aria-label="TikTok (se abre en nueva ventana)"
                 >
@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-[#1a1a1a] pt-8 text-center">
+        <div className="border-t border-[var(--color-black-3)] pt-8 text-center">
           <p className="font-body text-xs text-[var(--color-gray-aa)]">
             &copy; 2026 Ludo Sport Drake Academy. Todos los derechos reservados.
           </p>

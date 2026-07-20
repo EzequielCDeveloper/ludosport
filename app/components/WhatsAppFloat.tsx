@@ -7,7 +7,7 @@ export default function WhatsAppFloat() {
     <a
       href={`${ACADEMY.whatsappUrl}?text=Quiero%20informes%20sobre%20Drake%20Academy`}
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       className="group fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-14 h-14 md:w-15 md:h-15 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 hover:shadow-[0_6px_24px_rgba(37,211,102,0.5)] transition-all duration-200 whatsapp-float--entry"
       aria-label="Contactar por WhatsApp (se abre en nueva ventana)"
     >

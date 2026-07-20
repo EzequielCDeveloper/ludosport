@@ -23,7 +23,7 @@ export default function Rangos() {
         <h2 className="font-display text-4xl sm:text-5xl text-[var(--color-yellow)] text-center tracking-wider mb-4">
           SISTEMA DE RANGOS
         </h2>
-        <p className="font-body text-[var(--color-yellow)] text-center mb-12">
+        <p className="font-body text-[var(--color-yellow)] text-center uppercase tracking-[0.05em] mb-12">
           Cinco niveles de maestría en el arte del sable
         </p>
 
