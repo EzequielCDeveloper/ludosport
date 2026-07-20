@@ -75,10 +75,10 @@ export default function Actividades() {
         <button
           onClick={prev}
           disabled={isFirst}
-          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-50 disabled:pointer-events-none"
+          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-black transition-[filter,transform,opacity] duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Anterior"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M15 18l-6-6 6-6"
               stroke="currentColor"
@@ -93,7 +93,7 @@ export default function Actividades() {
             <button
               key={i}
               onClick={() => scrollTo(i)}
-              className={`w-6 h-6 border-2 transition-all duration-300 ${
+                className={`w-6 h-6 border-2 transition-colors duration-300 ${
                 i === currentIndex
                   ? "bg-[var(--color-yellow)] border-[var(--color-yellow)]"
                   : "bg-[var(--color-black-3)] border-[var(--color-gray-aa)]"
@@ -107,10 +107,10 @@ export default function Actividades() {
         <button
           onClick={next}
           disabled={isLast}
-          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-50 disabled:pointer-events-none"
+          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-black transition-[filter,transform,opacity] duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Siguiente"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
               d="M9 6l6 6-6 6"
               stroke="currentColor"

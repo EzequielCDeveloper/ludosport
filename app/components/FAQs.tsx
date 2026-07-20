@@ -22,6 +22,7 @@ export default function FAQs() {
                   className="w-4 h-4 flex-shrink-0 text-white transition-transform duration-300 group-open:rotate-180"
                   viewBox="0 0 20 20"
                   fill="none"
+                  aria-hidden="true"
                 >
                   <path
                     d="M5 7.5l5 5 5-5"

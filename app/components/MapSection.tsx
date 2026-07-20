@@ -12,9 +12,11 @@ export default function MapSection() {
           {!loaded && (
             <div
               className="absolute inset-0 z-10 bg-black flex items-center justify-center"
-              aria-hidden="true"
+              role="status"
+              aria-live="polite"
             >
               <div className="w-6 h-6 border-2 border-white/20 border-t-[var(--color-cyan)] rounded-full animate-spin" />
+              <span className="sr-only">Cargando mapa...</span>
             </div>
           )}
           <iframe

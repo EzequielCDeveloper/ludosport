@@ -52,25 +52,25 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 hero__animation--ctas">
           <a
             href="#contacto"
-            className="inline-block font-display text-base uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-8 py-3 transition-all duration-300 shadow-[0_0_10px_rgba(75,213,238,0.2),inset_0_0_5px_rgba(75,213,238,0.1)] hover:shadow-[0_0_20px_rgba(75,213,238,0.6),inset_0_0_10px_rgba(75,213,238,0.4)] hover:scale-[1.05] active:scale-[0.97]"
+            className="inline-block font-display text-base uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-8 py-3 transition-[color,background-color,transform,box-shadow] duration-300 shadow-[0_0_10px_rgba(75,213,238,0.2),inset_0_0_5px_rgba(75,213,238,0.1)] hover:shadow-[0_0_20px_rgba(75,213,238,0.6),inset_0_0_10px_rgba(75,213,238,0.4)] hover:scale-[1.05] active:scale-[0.97]"
             style={{ textShadow: "0 0 2px rgba(75,213,238,0.5)" }}
           >
             Quiero mi primera clase
           </a>
           <a
             href="#actividades"
-            className="inline-block font-display text-base uppercase tracking-wider text-white border-2 border-white hover:bg-white hover:text-black px-8 py-3 transition-all duration-300 hover:scale-[1.05] active:scale-[0.97]"
+            className="inline-block font-display text-base uppercase tracking-wider text-white border-2 border-white hover:bg-white hover:text-black px-8 py-3 transition-[color,background-color,transform] duration-300 hover:scale-[1.05] active:scale-[0.97]"
           >
             Ver actividades
           </a>
         </div>
 
         {/* Scroll hint */}
-        <div className="flex flex-col items-center gap-2 text-white hero__animation--scroll">
+        <div className="flex flex-col items-center gap-2 text-white hero__animation--scroll" title="Desplázate hacia abajo para conocer más">
           <span className="font-display text-xs uppercase tracking-widest">
             Descubre más
           </span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path
               d="M10 3v14M5 12l5 5 5-5"
               stroke="currentColor"
