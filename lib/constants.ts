@@ -37,6 +37,7 @@ export interface Valor {
   title: string;
   text: string;
   icon: string; // SVG markup
+  color: string; // theme color name for left border
 }
 
 export const VALORES: Valor[] = [
@@ -47,6 +48,7 @@ export const VALORES: Valor[] = [
       <path d="M24 4L8 44h32L24 4z" stroke="#ffe81f" stroke-width="2"/>
       <path d="M24 16l-6 16h12L24 16z" fill="#ffe81f"/>
     </svg>`,
+    color: "yellow",
   },
   {
     title: "Perseverancia",
@@ -55,6 +57,7 @@ export const VALORES: Valor[] = [
       <circle cx="24" cy="24" r="18" stroke="#ffe81f" stroke-width="2"/>
       <path d="M24 14v6l4 4" stroke="#ffe81f" stroke-width="2" stroke-linecap="round"/>
     </svg>`,
+    color: "yellow",
   },
   {
     title: "Autocontrol",
@@ -64,6 +67,7 @@ export const VALORES: Valor[] = [
       <circle cx="24" cy="30" r="6" stroke="#ffe81f" stroke-width="2"/>
       <path d="M18 38l-4 6h20l-4-6" stroke="#ffe81f" stroke-width="2"/>
     </svg>`,
+    color: "yellow",
   },
 ];
 

@@ -1,11 +1,11 @@
 import { RANGOS } from "@/lib/constants";
 
 const BORDER_COLORS: Record<string, string> = {
-  blue: "border-[var(--color-blue)]",
-  green: "border-[#00c853]",
-  yellow: "border-[var(--color-yellow)]",
-  purple: "border-[#9c27b0]",
-  white: "border-white",
+  blue: "[border-left-color:var(--color-blue)]",
+  green: "[border-left-color:#00c853]",
+  yellow: "[border-left-color:var(--color-yellow)]",
+  purple: "[border-left-color:#9c27b0]",
+  white: "[border-left-color:white]",
 };
 
 const TEXT_COLORS: Record<string, string> = {
@@ -31,7 +31,7 @@ export default function Rangos() {
           {RANGOS.map((rango, index) => {
             const isMaestro = index === 4;
             const baseClasses = isMaestro
-              ? "bg-white/[0.02] border border-white/[0.08] border-l-4 border-white/60"
+              ? "bg-white/[0.02] border border-white/[0.08] border-l-4 [border-left-color:rgba(255,255,255,0.6)]"
               : `bg-white/[0.015] border border-white/[0.06] border-l-4 ${BORDER_COLORS[rango.color] || "border-white/20"}`;
             return (
               <div

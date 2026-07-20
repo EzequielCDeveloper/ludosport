@@ -2,12 +2,21 @@ interface ValueCardProps {
   title: string;
   text: string;
   icon: string;
+  color: string;
 }
 
-export default function ValueCard({ title, text, icon }: ValueCardProps) {
+const BORDER_COLORS: Record<string, string> = {
+  yellow: "[border-top-color:var(--color-yellow)]",
+  blue: "[border-top-color:var(--color-blue)]",
+  green: "[border-top-color:var(--color-green)]",
+  cyan: "[border-top-color:var(--color-cyan)]",
+  red: "[border-top-color:var(--color-red)]",
+};
+
+export default function ValueCard({ title, text, icon, color }: ValueCardProps) {
   return (
     <article
-      className="border border-white/[0.06] border-t-3 border-[var(--color-yellow)]/20 bg-white/[0.015] p-10"
+      className={`border border-white/[0.06] border-t-4 bg-white/[0.015] p-10 ${BORDER_COLORS[color] || "border-t-white/20"}`}
       style={{
         backdropFilter: "blur(2px)",
         WebkitBackdropFilter: "blur(2px)",

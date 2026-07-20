@@ -27,6 +27,7 @@ export default function Valores() {
                 title={valor.title}
                 text={valor.text}
                 icon={valor.icon}
+                color={valor.color}
               />
             </div>
           ))}
