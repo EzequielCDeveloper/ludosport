@@ -2,44 +2,49 @@
 schema: spec-driven
 
 context: |
-  Project: Ludo Sport Drake Academy — P7
-  Stack: static HTML5 / CSS3 / vanilla JS (single-page landing page)
-  Architecture: single-page BEM-like CSS, no framework, no build, no router
-  Testing: none detected — pure static site, no test runner, no CI
+  Project: Ludo Sport Drake Academy
+  Stack: Next.js 16.2.10 / React 19 / TypeScript 5 / Tailwind CSS 4 / bun
+  Architecture: App Router, Server Components by default, Client Components as leaves, monorepo at /home/anon/Work/ludosport (apps/landing candidate)
+  Testing: ESLint 9 (eslint-config-next), TypeScript strict (tsc), no unit/e2e runner yet
   Language: Spanish (content), English (code identifiers/comments)
-  Audit: heuristic_audit.csv with 24 rows (Nielsen + WCAG issues)
 
 rules:
   proposal:
-    - Include rollback plan for risky changes
-    - Reference heuristic_audit.csv findings by ID
+    - Include migration impact assessment
+    - Reference @next/next lint rules
+    - Include build step considerations
   specs:
     - Use Given/When/Then for scenarios
     - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+    - Add Server vs Client Component decision per section
   design:
-    - Keep designs simple — static site with no build step
-    - Document CSS and JS changes with rationale
+    - Document next/font, next/image, Metadata API usage
+    - Document starfield CSS migration strategy
   tasks:
     - Group by phase, use hierarchical numbering
     - Keep tasks completable in one session
+    - Use PR stacking (stacked-to-main)
+    - Use atomic sections per task
   apply:
     guidelines:
       - Follow existing BEM-like naming conventions
       - Maintain Spanish content, English code/comments
     tdd: false
-    test_command: ""
+    test_command: "bun run lint"
   verify:
     test_command: ""
-    build_command: ""
+    build_command: "bun run build"
     coverage_threshold: 0
   archive:
     - Warn before merging destructive deltas
 
 testing:
   strict_tdd: false
-  reason: "No test runner detected — pure static HTML/CSS/JS with no package.json, build system, or CI"
+  reason: "No test runner detected — Next.js 16 project with ESLint and TypeScript strict but no Vitest/Jest/Playwright"
   frameworks: {}
   coverage: false
-  linters: {}
-  type_checkers: {}
+  linters:
+    eslint: "bun run lint"
+  type_checkers:
+    typescript: "npx tsc --noEmit"
   formatters: {}
