@@ -41,7 +41,7 @@ export default function Actividades() {
           {ACTIVIDADES.map((actividad) => (
             <article
               key={actividad.num}
-              className="actividad-card flex-[0_0_85vw] md:flex-[0_0_45vw] lg:flex-[0_0_30vw] 2xl:flex-[0_0_25vw] 2xl:max-w-[380px] max-w-[400px] md:max-w-[380px] lg:max-w-[360px] bg-white/[0.015] backdrop-blur-[2px] border border-white/[0.06] border-b-4 border-b-[var(--color-red)]/40 overflow-hidden snap-start transition-transform duration-300 hover:-translate-y-1.5"
+              className="actividad-card flex-[0_0_85vw] md:flex-[0_0_45vw] lg:flex-[0_0_30vw] 2xl:flex-[0_0_25vw] 2xl:max-w-[380px] max-w-[400px] md:max-w-[380px] lg:max-w-[360px] bg-white/[0.015] backdrop-blur-[2px] border border-white/[0.06] border-b-4 border-b-[var(--color-cyan)]/40 overflow-hidden snap-start transition-transform duration-300 hover:-translate-y-1.5"
               style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)" }}
             >
               <div className="aspect-[3/2] overflow-hidden">
@@ -54,7 +54,7 @@ export default function Actividades() {
                 />
               </div>
               <div className="p-6">
-                <span className="font-display text-base text-[var(--color-red)] block mb-1">
+                <span className="font-display text-base text-[var(--color-cyan)] block mb-1">
                   {String(actividad.num).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-lg tracking-wider uppercase text-white mb-2">
@@ -75,7 +75,7 @@ export default function Actividades() {
         <button
           onClick={prev}
           disabled={isFirst}
-          className="w-11 h-11 flex items-center justify-center bg-[var(--color-red)] text-white transition-all duration-300 hover:bg-[var(--color-red-dark)] hover:scale-110 disabled:opacity-30 disabled:pointer-events-none"
+          className="w-11 h-11 flex items-center justify-center bg-[var(--color-cyan)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-30 disabled:pointer-events-none"
           aria-label="Anterior"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -95,7 +95,7 @@ export default function Actividades() {
               onClick={() => scrollTo(i)}
               className={`w-6 h-6 border-2 transition-all duration-300 ${
                 i === currentIndex
-                  ? "bg-[var(--color-red)] border-[var(--color-red)]"
+                  ? "bg-[var(--color-cyan)] border-[var(--color-cyan)]"
                   : "bg-[var(--color-black-3)] border-[var(--color-gray-aa)]"
               }`}
               aria-label={`Ir a actividad ${i + 1}`}
@@ -107,7 +107,7 @@ export default function Actividades() {
         <button
           onClick={next}
           disabled={isLast}
-          className="w-11 h-11 flex items-center justify-center bg-[var(--color-red)] text-white transition-all duration-300 hover:bg-[var(--color-red-dark)] hover:scale-110 disabled:opacity-30 disabled:pointer-events-none"
+          className="w-11 h-11 flex items-center justify-center bg-[var(--color-cyan)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-30 disabled:pointer-events-none"
           aria-label="Siguiente"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

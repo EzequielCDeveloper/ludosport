@@ -22,7 +22,7 @@ export default function CtaFinal() {
 
         {/* Info grid */}
         <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12 animate-fade-up">
-          <div className="bg-white/[0.03] p-4 border-l-[3px] border-[var(--color-blue)] hover:shadow-[-5px_0_15px_rgba(13,110,253,0.25)] transition-shadow duration-200">
+          <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-blue)] hover:shadow-[0_-5px_15px_rgba(13,110,253,0.25)] transition-shadow duration-200">
             <span className="block font-display text-sm text-[var(--color-gray-aa)] uppercase tracking-widest mb-2">
               Horarios
             </span>
@@ -30,7 +30,7 @@ export default function CtaFinal() {
               {ACADEMY.schedule}
             </span>
           </div>
-          <div className="bg-white/[0.03] p-4 border-l-[3px] border-[var(--color-yellow)] hover:shadow-[-5px_0_15px_rgba(255,232,31,0.2)] transition-shadow duration-200">
+          <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-yellow)] hover:shadow-[0_-5px_15px_rgba(255,232,31,0.2)] transition-shadow duration-200">
             <span className="block font-display text-sm text-[var(--color-gray-aa)] uppercase tracking-widest mb-2">
               Ubicación
             </span>
@@ -38,7 +38,7 @@ export default function CtaFinal() {
               Callejón Jalisco, entre Soto y Pesqueira
             </span>
           </div>
-          <div className="bg-white/[0.03] p-4 border-l-[3px] border-[var(--color-red)] hover:shadow-[-5px_0_15px_rgba(220,53,69,0.25)] transition-shadow duration-200">
+          <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-red)] hover:shadow-[0_-5px_15px_rgba(220,53,69,0.25)] transition-shadow duration-200">
             <span className="block font-display text-sm text-[var(--color-gray-aa)] uppercase tracking-widest mb-2">
               Costo
             </span>
@@ -46,6 +46,20 @@ export default function CtaFinal() {
               {ACADEMY.pricing}
             </span>
           </div>
+        </div>
+
+        {/* Map */}
+        <div className="max-w-3xl mx-auto mb-12 animate-fade-up rounded-sm overflow-hidden border border-white/[0.06]">
+          <iframe
+            src="https://maps.google.com/maps?q=32.452,-114.7635&z=15&output=embed"
+            width="100%"
+            height="280"
+            style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg)" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Ubicación de Drake Academy"
+          />
         </div>
 
         {/* WhatsApp CTA */}
