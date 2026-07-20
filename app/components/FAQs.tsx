@@ -42,14 +42,18 @@ export default function FAQs() {
                   </svg>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-out ${
-                    isOpen ? "max-h-96 pb-5" : "max-h-0"
+                  className={`grid transition-all duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <p
-                    className="font-body text-base text-white leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: faq.answer }}
-                  />
+                  <div className="overflow-hidden">
+                    <div className={isOpen ? "pb-5" : ""}>
+                      <p
+                        className="font-body text-base text-white leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: faq.answer }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             );
