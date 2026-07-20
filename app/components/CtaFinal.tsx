@@ -49,6 +49,7 @@ export default function CtaFinal() {
           href={ACADEMY.whatsappUrl}
           target="_blank"
           rel="noopener"
+          aria-label="Quiero mi primera clase gratis (se abre en WhatsApp)"
           className="inline-block font-display text-lg uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-10 py-4 hover:scale-[1.05] active:scale-[0.97] cta-btn--cyan transition-all duration-300 animate-fade-up"
           style={{
             boxShadow:
