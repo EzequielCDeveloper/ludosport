@@ -237,6 +237,11 @@ body {
   animation: fadeUp 0.7s ease-out 0.8s both, bounceY 2s ease-in-out infinite 1s;
 }
 
+/* ─── WhatsApp float entry ─── */
+.whatsapp-float--entry {
+  animation: fadeUp 0.6s ease-out 1s both;
+}
+
 /* Small screen overrides (<389px) matching mockup */
 @media (max-width: 389px) {
   .hero__ctas {
