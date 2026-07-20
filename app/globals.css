@@ -230,6 +230,9 @@ body {
 .hero__animation--ctas {
   animation: fadeUp 0.7s ease-out 0.6s both;
 }
+.hero__animation--age {
+  animation: fadeUp 0.7s ease-out 0.5s both;
+}
 .hero__animation--scroll {
   animation: fadeUp 0.7s ease-out 0.8s both, bounceY 2s ease-in-out infinite 1s;
 }

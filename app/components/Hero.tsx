@@ -46,7 +46,7 @@ export default function Hero() {
           Esgrima deportiva con sables de madera — disciplina, respeto y dominio
           personal
         </p>
-        <p className="font-body text-sm sm:text-base text-white mb-10">
+        <p className="font-body text-sm sm:text-base text-white mb-10 hero__animation--age">
           Para niños y jóvenes desde los 7 años
         </p>
 
