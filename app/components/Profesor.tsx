@@ -11,7 +11,7 @@ export default function Profesor() {
               <div className="aspect-[5/6]">
                 <Image
                   src="/placeholders/kid-learning-with-teacher.jpg"
-                  alt="Maestro Vazquez"
+                  alt="Niño aprendiendo esgrima con un instructor en Drake Academy"
                   fill
                   className="object-cover profesor__img"
                   sizes="(max-width: 768px) 100vw, 500px"

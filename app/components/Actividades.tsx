@@ -75,7 +75,7 @@ export default function Actividades() {
         <button
           onClick={prev}
           disabled={isFirst}
-          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-30 disabled:pointer-events-none"
+          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Anterior"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -107,7 +107,7 @@ export default function Actividades() {
         <button
           onClick={next}
           disabled={isLast}
-          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-30 disabled:pointer-events-none"
+          className="w-11 h-11 flex items-center justify-center bg-[var(--color-yellow)] text-white transition-all duration-300 hover:brightness-75 hover:scale-110 disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Siguiente"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

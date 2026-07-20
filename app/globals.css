@@ -167,6 +167,18 @@ body {
   transition-delay: calc(var(--stagger-delay) * 5);
 }
 
+/* ─── Focus Visible ─── */
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+}
+
+/* Specific fix for skip-link target <main> */
+#main-content:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: -2px;
+}
+
 /* ─── WhatsApp float ─── */
 .whatsapp-float--hidden {
   opacity: 0;
