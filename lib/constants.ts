@@ -33,10 +33,15 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 // ─── Valores ─────────────────────────────────────────────
+import type { ComponentType, SVGProps } from "react";
+import DisciplinaIcon from "@/app/components/icons/DisciplinaIcon";
+import PerseveranciaIcon from "@/app/components/icons/PerseveranciaIcon";
+import AutocontrolIcon from "@/app/components/icons/AutocontrolIcon";
+
 export interface Valor {
   title: string;
   text: string;
-  icon: string; // SVG markup
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   color: string; // theme color name for left border
 }
 
@@ -44,29 +49,19 @@ export const VALORES: Valor[] = [
   {
     title: "Disciplina",
     text: "Cada movimiento, cada práctica, cada respiración — el dominio comienza con la constancia. Enseñamos a los alumnos que la verdadera fuerza nace de la repetición consciente.",
-    icon: `<svg viewBox="0 0 48 48" fill="none">
-      <path d="M24 4L8 44h32L24 4z" stroke="#ffe81f" stroke-width="2"/>
-      <path d="M24 16l-6 16h12L24 16z" fill="#ffe81f"/>
-    </svg>`,
+    icon: DisciplinaIcon,
     color: "yellow",
   },
   {
     title: "Perseverancia",
     text: "La constancia ante el desafío. Fomentamos la capacidad de mantenerse firmes ante los obstáculos, forjando un espíritu inquebrantable que busca la superación continua dentro y fuera del combate.",
-    icon: `<svg viewBox="0 0 48 48" fill="none">
-      <circle cx="24" cy="24" r="18" stroke="#ffe81f" stroke-width="2"/>
-      <path d="M24 14v6l4 4" stroke="#ffe81f" stroke-width="2" stroke-linecap="round"/>
-    </svg>`,
+    icon: PerseveranciaIcon,
     color: "yellow",
   },
   {
     title: "Autocontrol",
     text: "El dominio de la mente sobre el cuerpo. Promovemos la gestión de las emociones y la precisión en cada acción, entendiendo que el verdadero guerrero primero se vence a sí mismo.",
-    icon: `<svg viewBox="0 0 48 48" fill="none">
-      <path d="M10 44V20l14-12 14 12v24" stroke="#ffe81f" stroke-width="2"/>
-      <circle cx="24" cy="30" r="6" stroke="#ffe81f" stroke-width="2"/>
-      <path d="M18 38l-4 6h20l-4-6" stroke="#ffe81f" stroke-width="2"/>
-    </svg>`,
+    icon: AutocontrolIcon,
     color: "yellow",
   },
 ];
