@@ -28,7 +28,7 @@ export default function Profesor() {
             <h3 className="font-display text-2xl text-[var(--color-red)] mb-4">
               Maestro Vazquez
             </h3>
-            <p className="font-body text-base text-[var(--color-gray-light)] mb-6">
+            <p className="font-body text-base text-white mb-6">
               15+ años forjando guerreros. 300+ alumnos. 8 torneos
               internacionales.
             </p>
@@ -36,7 +36,7 @@ export default function Profesor() {
               &ldquo;El verdadero dominio comienza con el dominio de uno
               mismo&rdquo;
             </blockquote>
-            <p className="font-body text-[var(--color-gray-aa)] leading-relaxed">
+            <p className="font-body text-white leading-relaxed">
               Fundador de Ludo Sport Drake Academy, el Maestro Vazquez ha
               dedicado su vida a la enseñanza del sable de madera como
               herramienta de formación integral. Su metodología combina técnicas

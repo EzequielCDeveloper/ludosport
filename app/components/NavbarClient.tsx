@@ -40,7 +40,7 @@ export default function NavbarClient() {
               className={`font-display text-sm uppercase tracking-[0.08em] transition-colors duration-200 ${
                 link.cta
                   ? "text-white bg-[#0a58ca] hover:bg-[var(--color-red-dark)] px-4 py-2"
-                  : "text-[var(--color-gray-light)] hover:text-[var(--color-yellow)]"
+                  : "text-white hover:text-[var(--color-yellow)]"
               } ${
                 !link.cta && activeSection === link.href.slice(1)
                   ? "navbar__link--active"
@@ -69,7 +69,7 @@ export default function NavbarClient() {
             className={`font-display text-lg uppercase tracking-[0.08em] transition-colors duration-200 ${
               link.cta
                 ? "text-white bg-[#0a58ca] hover:bg-[var(--color-red-dark)] px-6 py-3"
-                : "text-[var(--color-gray-light)] hover:text-[var(--color-yellow)]"
+                : "text-white hover:text-[var(--color-yellow)]"
             } ${
               !link.cta && activeSection === link.href.slice(1)
                 ? "navbar__link--active"

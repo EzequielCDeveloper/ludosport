@@ -16,14 +16,14 @@ export default function CtaFinal() {
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[var(--color-yellow)] tracking-wider mb-6 animate-fade-up">
           TU PRIMER DUELO TE ESPERA
         </h2>
-        <p className="font-body text-lg text-[var(--color-gray-light)] mb-12 animate-fade-up">
+        <p className="font-body text-lg text-white mb-12 animate-fade-up">
           Primera clase gratis. Sin compromiso. Solo tú y el sable.
         </p>
 
         {/* Info grid */}
         <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12 animate-fade-up">
           <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-blue)] hover:shadow-[0_-5px_15px_rgba(13,110,253,0.25)] transition-shadow duration-200">
-            <span className="block font-display text-sm text-[var(--color-gray-aa)] uppercase tracking-widest mb-2">
+            <span className="block font-display text-sm text-white uppercase tracking-widest mb-2">
               Horarios
             </span>
             <span className="font-body text-white">
@@ -31,7 +31,7 @@ export default function CtaFinal() {
             </span>
           </div>
           <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-yellow)] hover:shadow-[0_-5px_15px_rgba(255,232,31,0.2)] transition-shadow duration-200">
-            <span className="block font-display text-sm text-[var(--color-gray-aa)] uppercase tracking-widest mb-2">
+            <span className="block font-display text-sm text-white uppercase tracking-widest mb-2">
               Ubicación
             </span>
             <span className="font-body text-white">
@@ -39,7 +39,7 @@ export default function CtaFinal() {
             </span>
           </div>
           <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-red)] hover:shadow-[0_-5px_15px_rgba(220,53,69,0.25)] transition-shadow duration-200">
-            <span className="block font-display text-sm text-[var(--color-gray-aa)] uppercase tracking-widest mb-2">
+            <span className="block font-display text-sm text-white uppercase tracking-widest mb-2">
               Costo
             </span>
             <span className="font-body text-white">

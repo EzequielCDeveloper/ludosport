@@ -60,7 +60,7 @@ export default function Actividades() {
                 <h3 className="font-display text-lg tracking-wider uppercase text-white mb-2">
                   {actividad.title}
                 </h3>
-                <p className="font-body text-sm text-[var(--color-gray-aa)] leading-relaxed">
+                <p className="font-body text-sm text-white leading-relaxed">
                   {actividad.text}
                 </p>
               </div>

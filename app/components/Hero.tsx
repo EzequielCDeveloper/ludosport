@@ -46,7 +46,7 @@ export default function Hero() {
           Esgrima deportiva con sables de madera — disciplina, respeto y dominio
           personal
         </p>
-        <p className="font-body text-sm sm:text-base text-[var(--color-gray-aa)] mb-10">
+        <p className="font-body text-sm sm:text-base text-white mb-10">
           Para niños y jóvenes desde los 7 años
         </p>
 
@@ -68,7 +68,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll hint */}
-        <div className="flex flex-col items-center gap-2 text-[var(--color-gray-aa)] hero__animation--scroll">
+        <div className="flex flex-col items-center gap-2 text-white hero__animation--scroll">
           <span className="font-display text-xs uppercase tracking-widest">
             Descubre más
           </span>

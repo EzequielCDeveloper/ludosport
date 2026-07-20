@@ -28,7 +28,7 @@ export default function FAQs() {
                 >
                   <span>{faq.question}</span>
                   <svg
-                    className={`w-4 h-4 flex-shrink-0 text-[var(--color-gray-aa)] transition-transform duration-300 ${
+                    className={`w-4 h-4 flex-shrink-0 text-white transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                     viewBox="0 0 20 20"
@@ -47,7 +47,7 @@ export default function FAQs() {
                   }`}
                 >
                   <p
-                    className="font-body text-base text-[var(--color-gray-aa)] leading-relaxed"
+                    className="font-body text-base text-white leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: faq.answer }}
                   />
                 </div>

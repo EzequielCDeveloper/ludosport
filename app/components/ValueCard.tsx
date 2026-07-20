@@ -29,7 +29,7 @@ export default function ValueCard({ title, text, icon, color }: ValueCardProps) 
         dangerouslySetInnerHTML={{ __html: icon }}
       />
       <h3 className="text-xl font-display text-white mb-2">{title}</h3>
-      <p className="text-[var(--color-gray-light)] font-body leading-relaxed">
+      <p className="text-white font-body leading-relaxed">
         {text}
       </p>
     </article>
