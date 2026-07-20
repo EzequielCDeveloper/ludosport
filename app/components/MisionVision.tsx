@@ -12,7 +12,7 @@ export default function MisionVision() {
         {/* Misión */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start">
           <div className="border-l-4 [border-left-color:var(--color-cyan)] pl-4">
-            <h3 className="font-display text-sm uppercase tracking-[0.05em] text-[var(--color-yellow)]/70">
+            <h3 className="font-display text-2xl uppercase tracking-[0.05em] text-[var(--color-cyan)]">
               MISIÓN
             </h3>
           </div>
@@ -29,7 +29,7 @@ export default function MisionVision() {
         {/* Visión */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start">
           <div className="border-l-4 [border-left-color:var(--color-cyan)] pl-4">
-            <h3 className="font-display text-sm uppercase tracking-[0.05em] text-[var(--color-yellow)]/70">
+            <h3 className="font-display text-2xl uppercase tracking-[0.05em] text-[var(--color-cyan)]">
               VISIÓN
             </h3>
           </div>
