@@ -5,7 +5,7 @@ export const ACADEMY = {
   whatsapp: "+526531649951",
   whatsappUrl: "https://wa.me/526531649951",
   address: "Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora",
-  coordinates: { lat: 32.452, lng: -114.7635 },
+  coordinates: { lat: 32.461111, lng: -114.795667 },
   cp: "83447",
   sameAs: {
     facebook: "https://facebook.com/ludosportdrake",
