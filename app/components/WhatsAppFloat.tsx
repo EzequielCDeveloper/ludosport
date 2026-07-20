@@ -1,19 +1,14 @@
 "use client";
 
 import { ACADEMY } from "@/lib/constants";
-import { useScrollVisibility } from "@/app/hooks/useScrollVisibility";
 
 export default function WhatsAppFloat() {
-  const { isVisible } = useScrollVisibility();
-
   return (
     <a
       href={`${ACADEMY.whatsappUrl}?text=Quiero%20informes%20sobre%20Drake%20Academy`}
       target="_blank"
       rel="noopener"
-      className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-14 h-14 md:w-15 md:h-15 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 hover:shadow-[0_6px_24px_rgba(37,211,102,0.5)] transition-all duration-200 ${
-        isVisible ? "" : "whatsapp-float--hidden"
-      }`}
+      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-14 h-14 md:w-15 md:h-15 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 hover:shadow-[0_6px_24px_rgba(37,211,102,0.5)] transition-all duration-200"
       aria-label="Contactar por WhatsApp"
     >
       <svg viewBox="0 0 24 24" fill="white" className="w-7 h-7 md:w-8 md:h-8">
