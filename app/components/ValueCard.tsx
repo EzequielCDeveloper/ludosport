@@ -5,6 +5,7 @@ interface ValueCardProps {
   color: string;
 }
 
+/* border-top accent colors — blue, green, cyan, red available for future values */
 const BORDER_COLORS: Record<string, string> = {
   yellow: "[border-top-color:var(--color-yellow)]",
   blue: "[border-top-color:var(--color-blue)]",

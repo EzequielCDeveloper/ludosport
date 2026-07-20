@@ -64,7 +64,7 @@ export default function NavbarClient() {
               href={link.href}
               className={`font-display text-sm uppercase tracking-[0.08em] transition-colors duration-200 ${
                 link.cta
-                  ? "text-white bg-[#0a58ca] hover:bg-[var(--color-red-dark)] px-4 py-2"
+                  ? "text-white bg-[var(--color-blue, #0a58ca)] hover:bg-[var(--color-red-dark)] px-4 py-2"
                   : "text-white hover:text-[var(--color-yellow)]"
               } ${
                 !link.cta && activeSection === link.href.slice(1)
@@ -74,6 +74,7 @@ export default function NavbarClient() {
               {...(!link.cta && activeSection === link.href.slice(1)
                 ? { "aria-current": "page" as const }
                 : {})}
+              {...(link.cta ? { title: "Contáctanos" } : {})}
             >
               {link.label}
             </a>
@@ -89,15 +90,24 @@ export default function NavbarClient() {
         aria-hidden={!menuOpen}
         {...(!menuOpen ? { inert: true } : {})}
       >
+        {/* Close button */}
+        <button
+          onClick={closeMenu}
+          className="absolute top-4 right-4 text-white text-3xl w-10 h-10 flex items-center justify-center hover:text-[var(--color-yellow)] transition-colors"
+          aria-label="Cerrar menú"
+        >
+          ×
+        </button>
+
         {NAV_LINKS.map((link, index) => (
           <a
             key={link.href}
             href={link.href}
             onClick={closeMenu}
             ref={index === 0 ? firstLinkRef : undefined}
-            className={`font-display text-lg uppercase tracking-[0.08em] transition-colors duration-200 ${
+            className={`font-display text-lg uppercase tracking-[0.08em] transition-colors duration-200 active:opacity-70 ${
               link.cta
-                ? "text-white bg-[#0a58ca] hover:bg-[var(--color-red-dark)] px-6 py-3"
+                ? "text-white bg-[var(--color-blue, #0a58ca)] hover:bg-[var(--color-red-dark)] px-6 py-3"
                 : "text-white hover:text-[var(--color-yellow)]"
             } ${
               !link.cta && activeSection === link.href.slice(1)
@@ -107,11 +117,21 @@ export default function NavbarClient() {
             {...(!link.cta && activeSection === link.href.slice(1)
               ? { "aria-current": "page" as const }
               : {})}
+            {...(link.cta ? { title: "Contáctanos" } : {})}
           >
             {link.label}
           </a>
         ))}
       </div>
+
+      {/* Backdrop for mobile menu */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-[999] bg-black/50"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
     </>
   );
 }

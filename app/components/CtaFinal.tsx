@@ -13,10 +13,10 @@ export default function CtaFinal() {
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[var(--color-yellow)] tracking-wider mb-6 animate-fade-up">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-wide text-[var(--color-yellow)] mb-6 animate-fade-up">
           TU PRIMER DUELO TE ESPERA
         </h2>
-        <p className="font-body text-lg text-[var(--color-yellow)] mb-12 animate-fade-up">
+        <p className="font-body text-[var(--color-yellow)] uppercase tracking-[0.05em] text-center mb-12 animate-fade-up">
           Primera clase gratis. Sin compromiso. Solo tú y el sable.
         </p>
 
@@ -50,7 +50,7 @@ export default function CtaFinal() {
           target="_blank"
           rel="noopener"
           aria-label="Quiero mi primera clase gratis (se abre en WhatsApp)"
-          className="inline-block font-display text-lg uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-10 py-4 hover:scale-[1.05] active:scale-[0.97] cta-btn--cyan transition-all duration-300 animate-fade-up"
+          className="inline-block font-display text-lg uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-10 py-4 hover:scale-[1.05] active:scale-[0.97] cta-btn--cyan transition-[color,background-color,transform,box-shadow] duration-300 animate-fade-up"
           style={{
             boxShadow:
               "0 0 10px rgba(75,213,238,0.2), inset 0 0 5px rgba(75,213,238,0.1)",

@@ -13,7 +13,7 @@ export const ACADEMY = {
     tiktok: "https://tiktok.com/@ludosportdrake",
   },
   schedule: "Jue-Vie 5-7pm · Sáb 4:30-7pm",
-  pricing: "1ra gratis · $200 1ra sem · $300 semanal · 50% 2do hermano",
+  pricing: "1ra gratis · $200 MXN 1ra sem · $300 MXN semanal · 50% 2do hermano",
 };
 
 // ─── Nav Links ─────────────────────────────────────────--
@@ -28,7 +28,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "#profesor", label: "Maestro" },
   { href: "#actividades", label: "Actividades" },
   { href: "#rangos", label: "Rangos" },
-  { href: "#faqs", label: "FAQs" },
+  { href: "#faqs", label: "FAQ" },
   { href: "#contacto", label: "Contacto", cta: true },
 ];
 
@@ -92,14 +92,14 @@ export const ACTIVIDADES: Actividad[] = [
     num: 2,
     title: "Duelos Coreografiados",
     text: "Secuencias de combate predefinidas que desarrollan memoria muscular, coordinación y expresión artística.",
-    image: "/placeholders/kids-training.jpg",
+    image: "/placeholders/kid-learning-with-teacher.jpg",
     imageAlt: "Duelos Coreografiados",
   },
   {
     num: 3,
     title: "Entrenamiento de Reflejos",
     text: "Ejercicios de reacción y velocidad mental. El cuerpo que responde antes de que la mente lo piense.",
-    image: "/placeholders/kid-learning-with-teacher.jpg",
+    image: "/placeholders/kid-tired.jpg",
     imageAlt: "Entrenamiento de Reflejos",
   },
   {
@@ -120,14 +120,14 @@ export const ACTIVIDADES: Actividad[] = [
     num: 6,
     title: "Defensa Personal",
     text: "Principios de protección y reacción aplicados a situaciones reales. Confianza que trasciende el entrenamiento.",
-    image: "/placeholders/kid-learning-with-teacher.jpg",
+    image: "/placeholders/kid-tired.jpg",
     imageAlt: "Defensa Personal",
   },
   {
     num: 7,
     title: "Acondicionamiento Atlético",
     text: "Fuerza, resistencia y flexibilidad diseñados para el rendimiento en combate. El cuerpo es tu primer armamento.",
-    image: "/placeholders/kid-tired.jpg",
+    image: "/placeholders/kid-learning-with-teacher.jpg",
     imageAlt: "Acondicionamiento Atlético",
   },
   {
@@ -141,7 +141,7 @@ export const ACTIVIDADES: Actividad[] = [
     num: 9,
     title: "Meditación Activa",
     text: "Ejercicios de atención plena en movimiento. La mente clara es el arma más poderosa del guerrero.",
-    image: "/placeholders/kid-tired.jpg",
+    image: "/placeholders/kids-training.jpg",
     imageAlt: "Meditación Activa",
   },
 ];
@@ -184,6 +184,17 @@ export const FAQS: FAQ[] = [
       "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría.",
   },
 ];
+
+// ─── Rango Colors ──────────────────────────────────────────
+// Map of color names to actual values used in Rangos.tsx.
+// Referenced as CSS variables for consistency with the theme system.
+export const RANGO_COLORS: Record<string, { border: string; text: string }> = {
+  blue: { border: "var(--color-blue)", text: "var(--color-blue)" },
+  green: { border: "var(--color-green)", text: "var(--color-green)" },
+  yellow: { border: "var(--color-yellow)", text: "var(--color-yellow)" },
+  purple: { border: "var(--color-purple)", text: "var(--color-purple)" },
+  white: { border: "white", text: "white" },
+};
 
 // ─── Rangos ──────────────────────────────────────────────
 export interface Rango {
