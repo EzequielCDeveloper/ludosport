@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* ─── Star Jedi (self-hosted, decorative) ─── */
+@font-face {
+  font-family: "Star Jedi";
+  src: url("/fonts/Starjedi.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --stagger-delay: 0.12s;
 
@@ -29,7 +38,8 @@
   --color-gray-light: #ccc;
 
   --font-display: "Anton", "Impact", sans-serif;
-  --font-body: "Pathway Gothic One", system-ui, sans-serif;
+  --font-body: "Exo 2", system-ui, sans-serif;
+  --font-star-jedi: "Star Jedi", "Anton", "Impact", sans-serif;
 
   --animate-fade-up: fadeUp 0.6s ease-out;
   --animate-fade-down: fadeDown 0.6s ease-out;

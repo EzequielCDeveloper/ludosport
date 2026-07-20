@@ -31,10 +31,10 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="mb-6 hero__animation--title">
-          <span className="block font-display hero__title-size leading-none tracking-[0.04em] hero__title-stroke">
+          <span className="block font-star-jedi hero__title-size leading-none tracking-[0.04em] hero__title-stroke">
             LUDOSPORT
           </span>
-          <span className="block font-display hero__title-size leading-none tracking-[0.04em] mt-2 hero__title-stroke">
+          <span className="block font-star-jedi hero__title-size leading-none tracking-[0.04em] mt-2 hero__title-stroke">
             DRAKE ACADEMY
           </span>
         </h1>

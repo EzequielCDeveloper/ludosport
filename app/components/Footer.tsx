@@ -16,7 +16,7 @@ export default function Footer() {
                 height={36}
                 className="rounded-sm"
               />
-              <span className="font-display text-white text-lg tracking-wider">
+              <span className="font-star-jedi text-white text-lg tracking-wider">
                 DRAKE ACADEMY
               </span>
             </div>

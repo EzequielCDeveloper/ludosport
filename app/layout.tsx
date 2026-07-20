@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Pathway_Gothic_One } from "next/font/google";
+import { Anton, Exo_2 } from "next/font/google";
 import { generateLocalBusiness } from "@/lib/json-ld";
 import "./globals.css";
 
@@ -9,8 +9,8 @@ const anton = Anton({
   variable: "--font-display",
 });
 
-const pathwayGothicOne = Pathway_Gothic_One({
-  weight: "400",
+const exo2 = Exo_2({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-body",
 });
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${anton.variable} ${pathwayGothicOne.variable}`}
+      className={`${anton.variable} ${exo2.variable}`}
     >
       <body className="bg-black text-[rgba(255,232,31,0.85)] min-h-full antialiased">
         <script

@@ -18,7 +18,7 @@ export default function Navbar() {
             height={48}
             className=""
           />
-          <span className="font-display text-white tracking-widest text-lg">
+          <span className="font-star-jedi text-white tracking-widest text-lg">
             DRAKE ACADEMY
           </span>
           </Link>
