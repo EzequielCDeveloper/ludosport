@@ -25,14 +25,10 @@ export default function Profesor() {
             <h2 className="font-display text-4xl sm:text-5xl text-[var(--color-yellow)] tracking-wider mb-2 text-left">
               EL MAESTRO
             </h2>
-            <h3 className="font-display text-2xl text-[var(--color-red)] mb-4">
+            <h3 className="font-display text-2xl text-white mb-4">
               Maestro Vazquez
             </h3>
-            <p className="font-body text-base text-white mb-6">
-              15+ años forjando guerreros. 300+ alumnos. 8 torneos
-              internacionales.
-            </p>
-            <blockquote className="font-display text-lg text-white italic border-l-4 border-[var(--color-red)] pl-6 mb-6">
+            <blockquote className="font-display text-lg text-[var(--color-cyan)] italic border-l-4 border-[var(--color-cyan)] pl-6 mb-6">
               &ldquo;El verdadero dominio comienza con el dominio de uno
               mismo&rdquo;
             </blockquote>

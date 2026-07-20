@@ -16,7 +16,7 @@ export default function CtaFinal() {
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[var(--color-yellow)] tracking-wider mb-6 animate-fade-up">
           TU PRIMER DUELO TE ESPERA
         </h2>
-        <p className="font-body text-lg text-white mb-12 animate-fade-up">
+        <p className="font-body text-lg text-[var(--color-yellow)] mb-12 animate-fade-up">
           Primera clase gratis. Sin compromiso. Solo tú y el sable.
         </p>
 
@@ -26,9 +26,7 @@ export default function CtaFinal() {
             <span className="block font-display text-sm text-white uppercase tracking-widest mb-2">
               Horarios
             </span>
-            <span className="font-body text-white">
-              {ACADEMY.schedule}
-            </span>
+            <span className="font-body text-white">{ACADEMY.schedule}</span>
           </div>
           <div className="bg-white/[0.03] p-4 border-t-[3px] [border-top-color:var(--color-yellow)] hover:shadow-[0_-5px_15px_rgba(255,232,31,0.2)] transition-shadow duration-200">
             <span className="block font-display text-sm text-white uppercase tracking-widest mb-2">
@@ -42,9 +40,7 @@ export default function CtaFinal() {
             <span className="block font-display text-sm text-white uppercase tracking-widest mb-2">
               Costo
             </span>
-            <span className="font-body text-white">
-              {ACADEMY.pricing}
-            </span>
+            <span className="font-body text-white">{ACADEMY.pricing}</span>
           </div>
         </div>
 
@@ -54,7 +50,11 @@ export default function CtaFinal() {
           target="_blank"
           rel="noopener"
           className="inline-block font-display text-lg uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-10 py-4 hover:scale-[1.05] active:scale-[0.97] cta-btn--cyan transition-all duration-300 animate-fade-up"
-          style={{ boxShadow: '0 0 10px rgba(75,213,238,0.2), inset 0 0 5px rgba(75,213,238,0.1)', textShadow: '0 0 2px rgba(75,213,238,0.5)' }}
+          style={{
+            boxShadow:
+              "0 0 10px rgba(75,213,238,0.2), inset 0 0 5px rgba(75,213,238,0.1)",
+            textShadow: "0 0 2px rgba(75,213,238,0.5)",
+          }}
         >
           Quiero mi primera clase gratis
         </a>

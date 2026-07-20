@@ -23,7 +23,7 @@ export default function Rangos() {
         <h2 className="font-display text-4xl sm:text-5xl text-[var(--color-yellow)] text-center tracking-wider mb-4">
           SISTEMA DE RANGOS
         </h2>
-        <p className="font-body text-white text-center mb-12">
+        <p className="font-body text-[var(--color-yellow)] text-center mb-12">
           Cinco niveles de maestría en el arte del sable
         </p>
 
@@ -36,7 +36,7 @@ export default function Rangos() {
             return (
               <div
                 key={rango.nivel}
-                className={`${baseClasses} px-[1.8rem] py-8 hover:translate-x-[6px] transition-transform duration-300 ${'rango-card--' + rango.color}`}
+                className={`${baseClasses} px-[1.8rem] py-8 hover:translate-x-[6px] transition-transform duration-300 ${"rango-card--" + rango.color}`}
                 style={{
                   backdropFilter: "blur(2px)",
                   WebkitBackdropFilter: "blur(2px)",
