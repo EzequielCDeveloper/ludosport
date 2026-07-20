@@ -9,6 +9,7 @@ import Actividades from "@/app/components/Actividades";
 import Rangos from "@/app/components/Rangos";
 import FAQs from "@/app/components/FAQs";
 import CtaFinal from "@/app/components/CtaFinal";
+import MapSection from "@/app/components/MapSection";
 import Footer from "@/app/components/Footer";
 import WhatsAppFloat from "@/app/components/WhatsAppFloat";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Rangos />
       <FAQs />
       <CtaFinal />
+      <MapSection />
       <Footer />
       <WhatsAppFloat />
     </>
