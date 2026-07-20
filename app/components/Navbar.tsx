@@ -7,12 +7,13 @@ export default function Navbar() {
     <nav
       id="navbar"
       className="fixed top-0 left-0 w-full z-50 bg-black"
+      aria-label="Navegación principal"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo.jpeg"
-            alt="Drake Academy"
+            alt=""
             width={48}
             height={48}
             className=""

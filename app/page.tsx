@@ -15,7 +15,7 @@ import WhatsAppFloat from "@/app/components/WhatsAppFloat";
 
 export default function Home() {
   return (
-    <>
+    <main id="main-content" tabIndex={-1}>
       <SkipLink />
       <Starfield />
       <Navbar />
@@ -30,6 +30,6 @@ export default function Home() {
       <MapSection />
       <Footer />
       <WhatsAppFloat />
-    </>
+    </main>
   );
 }

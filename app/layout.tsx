@@ -63,7 +63,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: jsonLd }}
         />
         {children}
-        <div aria-live="polite" role="status" className="visually-hidden" />
       </body>
     </html>
   );

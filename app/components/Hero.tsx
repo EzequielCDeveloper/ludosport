@@ -4,8 +4,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <span id="main-content" tabIndex={-1} />
-
       {/* Hero background gradients */}
       <div
         className="absolute inset-0"
