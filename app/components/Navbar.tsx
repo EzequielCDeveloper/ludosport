@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className="fixed top-0 left-0 w-full z-50"
+      className="fixed top-0 left-0 w-full z-50 bg-black"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
