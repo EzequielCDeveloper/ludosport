@@ -2,6 +2,7 @@ import SkipLink from "@/app/components/SkipLink";
 import Starfield from "@/app/components/Starfield";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
+import MisionVision from "@/app/components/MisionVision";
 import Valores from "@/app/components/Valores";
 import Profesor from "@/app/components/Profesor";
 import Actividades from "@/app/components/Actividades";
@@ -18,6 +19,7 @@ export default function Home() {
       <Starfield />
       <Navbar />
       <Hero />
+      <MisionVision />
       <Valores />
       <Profesor />
       <Actividades />
