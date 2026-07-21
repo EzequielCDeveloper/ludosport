@@ -1,0 +1,48 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  Project: Ludo Sport Drake Academy Landing Page
+  Stack: Next.js 16.2.10 / React 19 / TypeScript 5 / Tailwind CSS 4
+  Architecture: App Router, Server Components by default, Client Components as leaves
+  Runtime: bun (dev), npm (lock)
+  Testing: ESLint 9 (eslint-config-next), TypeScript strict (tsc), no unit/e2e runner
+  Language: Spanish (content), English (code identifiers/comments)
+  Deployment: Netlify (fluffy-lamington-27c3ae.netlify.app)
+  Key features: Star Wars crawl intro, Leaflet map, responsive sections, 10 real academy activities
+
+rules:
+  proposal:
+    - Include scope boundaries clearly
+    - Document non-goals
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+    - Add Server vs Client Component decision per section
+  design:
+    - Document component architecture decisions
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    guidelines:
+      - Follow existing project patterns
+    tdd: false
+    test_command: "bun run lint"
+  verify:
+    test_command: "bun run lint"
+    build_command: "bun run build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  strict_tdd: false
+  reason: "No test runner detected — Next.js 16 project with ESLint and TypeScript strict"
+  frameworks: {}
+  coverage: false
+  linters:
+    eslint: "bun run lint"
+  type_checkers:
+    typescript: "npx tsc --noEmit"
+  formatters: {}

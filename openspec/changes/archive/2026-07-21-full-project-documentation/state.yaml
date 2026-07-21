@@ -1,0 +1,10 @@
+# Change State
+change_name: full-project-documentation
+created: 2026-07-21
+status: archived
+archived_at: 2026-07-21
+completed_phases: [explore, propose, spec, design, tasks, apply, verify]
+current_phase: archive
+artifact_store: openspec
+delivery_strategy: force-chained
+review_budget_lines: 400

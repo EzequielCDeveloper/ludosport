@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
+last-reviewed: 2026-07-21
+---
 
-## Getting Started
+# Ludo Sport Drake Academy
 
-First, run the development server:
+**Landing page para la academia de esgrima deportiva con sables de madera.**
+
+Ludo Sport Drake Academy es un club de contact sport (esgrima con sables de madera) temático de Star Wars, ubicado en San Luis Río Colorado, Sonora, México. Este sitio es una landing page single-page construida con Next.js y App Router, desplegada en Netlify.
+
+## Tech Stack
+
+| Technology | Version |
+|------------|---------|
+| Next.js | 16.2.10 |
+| React | 19.2.4 |
+| TypeScript | 5.x |
+| Tailwind CSS | 4.x |
+| Leaflet | 1.9.4 |
+| Package Manager | bun (dev), npm (lockfile) |
+
+## Prerequisites
+
+- **Node.js** LTS (v20 or later)
+- **bun** — [Install bun](https://bun.sh/docs/installation)
+
+## Quickstart
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+# Clone the repository
+git clone <repo-url>
+cd ludosport
+
+# Install dependencies
+bun install
+
+# Start the development server
 bun dev
+
+# Build for production
+bun run build
+
+# Run the linter
+bun run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Script | Description |
+|--------|-------------|
+| `bun dev` | Start the Next.js development server (localhost:3000) |
+| `bun run build` | Build the project for production (output: `.next/`) |
+| `bun start` | Start the production server (requires `bun run build` first) |
+| `bun run lint` | Run ESLint on the project |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```mermaid
+graph TD
+    root["📁 ludosport/"] --> app["📁 app/"]
+    root --> lib["📁 lib/"]
+    root --> public["📁 public/"]
+    root --> docs["📁 docs/"]
+    root --> mockup["📁 mockup/"]
+    root --> config["📄 next.config.ts"]
+    root --> packagejson["📄 package.json"]
+    root --> tsconfig["📄 tsconfig.json"]
+    root --> postcss["📄 postcss.config.mjs"]
+    root --> eslint["📄 eslint.config.mjs"]
 
-To learn more about Next.js, take a look at the following resources:
+    app --> components["📁 components/"]
+    app --> hooks["📁 hooks/"]
+    app --> styles["📁 styles/"]
+    app --> layout["📄 layout.tsx"]
+    app --> page["📄 page.tsx"]
+    app --> error["📄 error.tsx"]
+    app --> notfound["📄 not-found.tsx"]
+    app --> sitemap["📄 sitemap.ts"]
+    app --> robots["📄 robots.ts"]
+    app --> globals["📄 globals.css"]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    lib --> constants["📄 constants.ts"]
+    lib --> jsonld["📄 json-ld.ts"]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    public --> fonts["📁 fonts/"]
+    public --> placeholders["📁 placeholders/"]
+    public --> logo["📄 logo.jpeg"]
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site is deployed on **Netlify**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Live URL**: [https://fluffy-lamington-27c3ae.netlify.app](https://fluffy-lamington-27c3ae.netlify.app)
+- **Build command**: `bun run build`
+- **Output directory**: `.next` (Next.js default)
+- **Auto-deploy**: Commits to the default branch trigger automatic deploys.
+
+---
+
+Internal architecture and developer guides are available in [`ARCHITECTURE.md`](./ARCHITECTURE.md) and the [`docs/`](./docs/) directory.
