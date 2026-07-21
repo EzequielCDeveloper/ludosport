@@ -6,7 +6,7 @@ const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' https://placehold.co blob: data:;
+  img-src 'self' https://placehold.co https://*.basemaps.cartocdn.com https://*.openstreetmap.org blob: data:;
   font-src 'self';
   object-src 'none';
   base-uri 'self';

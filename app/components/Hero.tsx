@@ -79,6 +79,16 @@ export default function Hero() {
           </svg>
         </div>
       </div>
+
+      {/* Bottom fade to black — smooth visual bridge to StarWarsCrawl */}
+      <div
+        className="absolute bottom-0 inset-x-0 h-24 pointer-events-none"
+        style={{
+          zIndex: 20,
+          background:
+            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%)",
+        }}
+      />
     </section>
   );
 }

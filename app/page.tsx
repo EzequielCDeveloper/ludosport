@@ -2,6 +2,7 @@ import SkipLink from "@/app/components/SkipLink";
 import Starfield from "@/app/components/Starfield";
 import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
+import StarWarsCrawl from "@/app/components/StarWarsCrawl";
 import MisionVision from "@/app/components/MisionVision";
 import Valores from "@/app/components/Valores";
 import Profesor from "@/app/components/Profesor";
@@ -20,6 +21,7 @@ export default function Home() {
       <Starfield />
       <Navbar />
       <Hero />
+      <StarWarsCrawl />
       <MisionVision />
       <Valores />
       <Profesor />
