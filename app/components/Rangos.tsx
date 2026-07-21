@@ -1,20 +1,5 @@
 import { RANGOS } from "@/lib/constants";
-
-const BORDER_COLORS: Record<string, string> = {
-  blue: "[border-top-color:var(--color-blue)]",
-  green: "[border-top-color:var(--color-green)]",
-  yellow: "[border-top-color:var(--color-yellow)]",
-  purple: "[border-top-color:var(--color-purple)]",
-  white: "[border-top-color:white]",
-};
-
-const TEXT_COLORS: Record<string, string> = {
-  blue: "text-[var(--color-blue)]",
-  green: "text-[var(--color-green)]",
-  yellow: "text-[var(--color-yellow)]",
-  purple: "text-[var(--color-purple)]",
-  white: "text-white",
-};
+import { BORDER_COLORS, TEXT_COLORS } from "@/lib/colors";
 
 export default function Rangos() {
   return (

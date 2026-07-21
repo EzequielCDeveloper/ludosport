@@ -1,4 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
+import { BORDER_COLORS } from "@/lib/colors";
 
 interface ValueCardProps {
   title: string;
@@ -6,15 +7,6 @@ interface ValueCardProps {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   color: string;
 }
-
-/* border-top accent colors — blue, green, cyan, red available for future values */
-const BORDER_COLORS: Record<string, string> = {
-  yellow: "[border-top-color:var(--color-yellow)]",
-  blue: "[border-top-color:var(--color-blue)]",
-  green: "[border-top-color:var(--color-green)]",
-  cyan: "[border-top-color:var(--color-cyan)]",
-  red: "[border-top-color:var(--color-red)]",
-};
 
 export default function ValueCard({ title, text, icon: Icon, color }: ValueCardProps) {
   return (

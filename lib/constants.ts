@@ -78,66 +78,73 @@ export interface Actividad {
 export const ACTIVIDADES: Actividad[] = [
   {
     num: 1,
-    title: "Esgrima con Sable de Madera",
-    text: "Técnica fundamental de ataque, defensa y desplazamiento. Dominio del sable como extensión del cuerpo.",
+    title: "Entrenamiento Técnico Progresivo",
+    text: "Plan de formación escalonado que va de lo fundamental a lo avanzado. Cada etapa construye sobre la anterior, asegurando una base sólida antes de avanzar al siguiente nivel.",
     image: "/placeholders/kids-training.jpg",
-    imageAlt: "Esgrima con Sable de Madera",
+    imageAlt: "Entrenamiento Técnico Progresivo",
   },
   {
     num: 2,
-    title: "Duelos Coreografiados",
-    text: "Secuencias de combate predefinidas que desarrollan memoria muscular, coordinación y expresión artística.",
+    title: "Ejercicios de Coordinación y Reacción",
+    text: "Ejercicios específicos que desarrollan la sincronización de movimientos y los reflejos. El cuerpo aprende a reaccionar con velocidad y precisión ante cualquier estímulo del combate.",
     image: "/placeholders/kid-learning-with-teacher.jpg",
-    imageAlt: "Duelos Coreografiados",
+    imageAlt: "Ejercicios de Coordinación y Reacción",
   },
   {
     num: 3,
-    title: "Entrenamiento de Reflejos",
-    text: "Ejercicios de reacción y velocidad mental. El cuerpo que responde antes de que la mente lo piense.",
+    title: "Acondicionamiento Físico Adaptado",
+    text: "Preparación física diseñada según la edad y nivel de cada alumno. Trabajamos fuerza, resistencia y flexibilidad de forma segura y progresiva para que el cuerpo esté listo para el combate.",
     image: "/placeholders/kid-tired.jpg",
-    imageAlt: "Entrenamiento de Reflejos",
+    imageAlt: "Acondicionamiento Físico Adaptado",
   },
   {
     num: 4,
-    title: "Precisión y Puntería",
-    text: "Técnicas de control milimétrico del sable. Golpes exactos a blancos específicos con máxima eficiencia.",
+    title: "Técnicas de Respiración y Concentración",
+    text: "Ejercicios de respiración consciente que enseñan a mantener la calma y la concentración bajo presión. Dominar el aire es dominar la mente y el combate.",
     image: "/placeholders/kid-learning-with-teacher.jpg",
-    imageAlt: "Precisión y Puntería",
+    imageAlt: "Técnicas de Respiración y Concentración",
   },
   {
     num: 5,
-    title: "Katas de Combate",
-    text: "Formas estructuradas que integran técnica, fluidez y conciencia corporal en una sola secuencia armónica.",
+    title: "Juegos Estratégicos y Trabajo en Equipo",
+    text: "Actividades lúdicas que desarrollan el pensamiento táctico y la colaboración. Los alumnos aprenden a crear estrategias y a confiar en sus compañeros.",
     image: "/placeholders/kids-training.jpg",
-    imageAlt: "Katas de Combate",
+    imageAlt: "Juegos Estratégicos y Trabajo en Equipo",
   },
   {
     num: 6,
-    title: "Defensa Personal",
-    text: "Principios de protección y reacción aplicados a situaciones reales. Confianza que trasciende el entrenamiento.",
+    title: "Combates Controlados y Supervisados",
+    text: "Práctica de combate en un entorno seguro con equipo de protección y supervisión constante. Cada duelo es guiado para maximizar el aprendizaje sin riesgos.",
     image: "/placeholders/kid-tired.jpg",
-    imageAlt: "Defensa Personal",
+    imageAlt: "Combates Controlados y Supervisados",
   },
   {
     num: 7,
-    title: "Acondicionamiento Atlético",
-    text: "Fuerza, resistencia y flexibilidad diseñados para el rendimiento en combate. El cuerpo es tu primer armamento.",
+    title: "Misiones y Retos de Entrenamiento",
+    text: "Desafíos temáticos que combinan habilidades técnicas, creatividad y toma de decisiones. Cada misión es una aventura diseñada para superar límites.",
     image: "/placeholders/kid-learning-with-teacher.jpg",
-    imageAlt: "Acondicionamiento Atlético",
+    imageAlt: "Misiones y Retos de Entrenamiento",
   },
   {
     num: 8,
-    title: "Control de Respiración",
-    text: "Técnicas respiratorias para mantener la calma bajo presión. El ritmo del combate empieza en los pulmones.",
+    title: "Evaluaciones de Progreso",
+    text: "Sesiones periódicas de evaluación que miden el avance técnico, actitudinal y teórico de cada alumno. Feedback claro para saber exactamente qué mejorar y hacia dónde avanzar.",
     image: "/placeholders/kid-tired.jpg",
-    imageAlt: "Control de Respiración",
+    imageAlt: "Evaluaciones de Progreso",
   },
   {
     num: 9,
-    title: "Meditación Activa",
-    text: "Ejercicios de atención plena en movimiento. La mente clara es el arma más poderosa del guerrero.",
+    title: "Torneos Amistosos",
+    text: "Competencias internas entre compañeros que fomentan el compañerismo y el espíritu deportivo. El verdadero premio es la experiencia y el crecimiento compartido.",
     image: "/placeholders/kids-training.jpg",
-    imageAlt: "Meditación Activa",
+    imageAlt: "Torneos Amistosos",
+  },
+  {
+    num: 10,
+    title: "Eventos Especiales para Alumnos y Familias",
+    text: "Exhibiciones, convivencias y celebraciones que invitan a las familias a ser parte activa del camino de sus hijos. La academia es una comunidad que trasciende el entrenamiento.",
+    image: "/placeholders/kid-learning-with-teacher.jpg",
+    imageAlt: "Eventos Especiales para Alumnos y Familias",
   },
 ];
 
@@ -179,17 +186,6 @@ export const FAQS: FAQ[] = [
       "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría.",
   },
 ];
-
-// ─── Rango Colors ──────────────────────────────────────────
-// Map of color names to actual values used in Rangos.tsx.
-// Referenced as CSS variables for consistency with the theme system.
-export const RANGO_COLORS: Record<string, { border: string; text: string }> = {
-  blue: { border: "var(--color-blue)", text: "var(--color-blue)" },
-  green: { border: "var(--color-green)", text: "var(--color-green)" },
-  yellow: { border: "var(--color-yellow)", text: "var(--color-yellow)" },
-  purple: { border: "var(--color-purple)", text: "var(--color-purple)" },
-  white: { border: "white", text: "white" },
-};
 
 // ─── Rangos ──────────────────────────────────────────────
 export interface Rango {

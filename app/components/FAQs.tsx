@@ -14,8 +14,8 @@ export default function FAQs() {
         </p>
 
         <div className="divide-y divide-[var(--color-black-3)]">
-          {FAQS.map((faq, index) => (
-            <details key={index} className="group">
+          {FAQS.map((faq) => (
+            <details key={faq.question} className="group">
               <summary className="flex cursor-pointer items-center justify-between py-5 font-display text-base tracking-wider uppercase text-left text-white hover:text-[var(--color-yellow)] transition-colors duration-200 list-none [&::-webkit-details-marker]:hidden">
                 <span>{faq.question}</span>
                 <svg

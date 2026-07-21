@@ -1,9 +1,75 @@
 "use client";
 
-import { useState } from "react";
+import type { Map as LeafletMap } from "leaflet";
+import { useEffect, useRef, useState } from "react";
+import "leaflet/dist/leaflet.css";
+import { ACADEMY } from "@/lib/constants";
 
 export default function MapSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<LeafletMap | null>(null);
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+    let cancelled = false;
+
+    (async () => {
+      const L = (await import("leaflet")).default;
+
+      if (cancelled || !containerRef.current) return;
+
+      const map = L.map(containerRef.current, {
+        center: [ACADEMY.coordinates.lat, ACADEMY.coordinates.lng],
+        zoom: 15,
+        scrollWheelZoom: false,
+        zoomControl: true,
+        attributionControl: true,
+      });
+      mapRef.current = map;
+
+      // CARTO Dark Matter tiles — free, no API key, dark themed.
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          subdomains: "abcd",
+          maxZoom: 19,
+        },
+      ).addTo(map);
+
+      // Custom saber-themed marker — keeps brand palette, no broken default icon
+      const markerIcon = L.divIcon({
+        className: "ludosport-marker",
+        html: `
+          <svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="17" cy="17" r="15" fill="rgba(220,53,69,0.25)" stroke="#ffe81f" stroke-width="1" opacity="0.7"/>
+            <circle cx="17" cy="17" r="5" fill="#dc3545" stroke="#ffe81f" stroke-width="1.5"/>
+          </svg>`,
+        iconSize: [34, 34],
+        iconAnchor: [17, 17],
+        popupAnchor: [0, -16],
+      });
+
+      L.marker([ACADEMY.coordinates.lat, ACADEMY.coordinates.lng], { icon: markerIcon })
+        .addTo(map)
+        .bindPopup(
+          '<strong style="color:#ffe81f">Drake Academy</strong><br/>LudoSport San Luis Río Colorado',
+        );
+
+      // Hide spinner once Leaflet has its first render
+      map.whenReady(() => setLoaded(true));
+    })();
+
+    return () => {
+      cancelled = true;
+      if (mapRef.current) {
+        mapRef.current.remove();
+      }
+      mapRef.current = null;
+    };
+  }, []);
 
   return (
     <section className="py-24">
@@ -19,16 +85,11 @@ export default function MapSection() {
               <span className="sr-only">Cargando mapa...</span>
             </div>
           )}
-          <iframe
-            src="https://maps.google.com/maps?q=32.461111,-114.795667&z=15&output=embed"
-            width="100%"
-            height="380"
-            style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg)" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Ubicación de Drake Academy"
-            onLoad={() => setLoaded(true)}
+          <div
+            ref={containerRef}
+            style={{ height: 380, width: "100%", background: "#000" }}
+            aria-label="Mapa: ubicación de Drake Academy en San Luis Río Colorado"
+            role="application"
           />
         </div>
       </div>

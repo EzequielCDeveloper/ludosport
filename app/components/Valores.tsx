@@ -1,7 +1,7 @@
 "use client";
 
 import { VALORES } from "@/lib/constants";
-import ValueCard from "./ValueCard";
+import ValueCard from "@/app/components/ValueCard";
 import { useStaggerAnimation } from "@/app/hooks/useStaggerAnimation";
 
 export default function Valores() {

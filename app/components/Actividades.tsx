@@ -17,7 +17,7 @@ export default function Actividades() {
           ACTIVIDADES
         </h2>
         <p className="font-body text-[var(--color-yellow)] uppercase tracking-[0.05em] text-center mb-12">
-          9 disciplinas que transforman
+          10 disciplinas que transforman
         </p>
       </div>
 
@@ -50,6 +50,7 @@ export default function Actividades() {
                   alt={actividad.imageAlt}
                   width={600}
                   height={400}
+                  sizes="(max-width: 768px) 85vw, (max-width: 1024px) 45vw, 30vw"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -89,9 +90,9 @@ export default function Actividades() {
 
         {/* Dot indicators */}
         <div className="flex gap-2">
-          {ACTIVIDADES.map((_, i) => (
+          {ACTIVIDADES.map((actividad, i) => (
             <button
-              key={i}
+              key={actividad.num}
               onClick={() => scrollTo(i)}
                 className={`w-6 h-6 border-2 transition-colors duration-300 ${
                 i === currentIndex
