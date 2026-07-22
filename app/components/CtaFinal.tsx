@@ -5,11 +5,7 @@ export default function CtaFinal() {
     <section id="contacto" className="relative py-24 overflow-hidden">
       {/* Background with radial gradients */}
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 25% 50%, color-mix(in srgb, var(--color-blue) 12%, transparent) 0%, transparent 60%), radial-gradient(ellipse at 75% 50%, color-mix(in srgb, var(--color-red) 12%, transparent) 0%, transparent 60%)",
-        }}
+        className="absolute inset-0 cta__bg-gradients"
       />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -51,11 +47,6 @@ export default function CtaFinal() {
           rel="noopener noreferrer"
           aria-label="Quiero mi primera clase gratis (se abre en WhatsApp)"
           className="inline-block font-display text-lg uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-10 py-4 hover:scale-[1.05] active:scale-[0.97] cta-btn--cyan transition-[color,background-color,transform,box-shadow] duration-300 animate-fade-up"
-          style={{
-            boxShadow:
-              "0 0 10px rgba(75,213,238,0.2), inset 0 0 5px rgba(75,213,238,0.1)",
-            textShadow: "0 0 2px rgba(75,213,238,0.5)",
-          }}
         >
           Quiero mi primera clase gratis
         </a>

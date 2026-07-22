@@ -16,11 +16,7 @@ export default function Hero() {
       />
       {/* Scanline overlay */}
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "repeating-linear-gradient(90deg, transparent 0px, transparent 120px, rgba(255, 255, 255, 0.015) 120px, rgba(255, 255, 255, 0.015) 121px)",
-        }}
+        className="absolute inset-0 hero__scanline"
       />
 
       <div className="relative z-10 container mx-auto px-4 text-center pt-24 pb-16">
@@ -52,8 +48,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 hero__animation--ctas">
           <a
             href="#contacto"
-            className="inline-block font-display text-base uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-8 py-3 transition-[color,background-color,transform,box-shadow] duration-300 shadow-[0_0_10px_rgba(75,213,238,0.2),inset_0_0_5px_rgba(75,213,238,0.1)] hover:shadow-[0_0_20px_rgba(75,213,238,0.6),inset_0_0_10px_rgba(75,213,238,0.4)] hover:scale-[1.05] active:scale-[0.97]"
-            style={{ textShadow: "0 0 2px rgba(75,213,238,0.5)" }}
+            className="inline-block font-display text-base uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-8 py-3 transition-[color,background-color,transform,box-shadow] duration-300 shadow-[0_0_10px_rgba(75,213,238,0.2),inset_0_0_5px_rgba(75,213,238,0.1)] hover:shadow-[0_0_20px_rgba(75,213,238,0.6),inset_0_0_10px_rgba(75,213,238,0.4)] hover:scale-[1.05] active:scale-[0.97] [text-shadow:0_0_2px_rgba(75,213,238,0.5)]"
           >
             Quiero mi primera clase
           </a>
@@ -82,12 +77,7 @@ export default function Hero() {
 
       {/* Bottom fade to black — smooth visual bridge to StarWarsCrawl */}
       <div
-        className="absolute bottom-0 inset-x-0 h-24 pointer-events-none"
-        style={{
-          zIndex: 20,
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%)",
-        }}
+        className="absolute bottom-0 inset-x-0 h-24 pointer-events-none hero__bottom-fade"
       />
     </section>
   );

@@ -55,7 +55,7 @@ export default function MapSection() {
       L.marker([ACADEMY.coordinates.lat, ACADEMY.coordinates.lng], { icon: markerIcon })
         .addTo(map)
         .bindPopup(
-          '<strong style="color:#ffe81f">Drake Academy</strong><br/>LudoSport San Luis Río Colorado',
+          '<strong>Drake Academy</strong><br/>LudoSport San Luis Río Colorado',
         );
 
       // Hide spinner once Leaflet has its first render
@@ -87,7 +87,7 @@ export default function MapSection() {
           )}
           <div
             ref={containerRef}
-            style={{ height: 380, width: "100%", background: "#000" }}
+            className="h-[380px] w-full bg-black"
             aria-label="Mapa: ubicación de Drake Academy en San Luis Río Colorado"
             role="application"
           />

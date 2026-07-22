@@ -21,14 +21,7 @@ export default function Rangos() {
             return (
               <div
                 key={rango.nivel}
-                className={`${baseClasses} px-[1.8rem] py-8 hover:-translate-y-[6px] transition-transform duration-300 ${"rango-card--" + rango.color}`}
-                style={{
-                  backdropFilter: "blur(2px)",
-                  WebkitBackdropFilter: "blur(2px)",
-                  boxShadow: isMaestro
-                    ? "0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15)"
-                    : "0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
-                }}
+                className={`${baseClasses} px-[1.8rem] py-8 hover:-translate-y-[6px] transition-transform duration-300 backdrop-blur-[2px] ${isMaestro ? "rango-card--maestro" : "rango-card--default"} ${"rango-card--" + rango.color}`}
               >
                 <span
                   className={`inline-block font-display text-[2.8rem] mb-[0.3rem] ${TEXT_COLORS[rango.color] || "text-white"}`}

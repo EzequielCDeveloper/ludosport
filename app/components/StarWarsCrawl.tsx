@@ -106,23 +106,14 @@ export default function StarWarsCrawl() {
 
         {/* Top fade — vanishing point */}
         <div
-          className="absolute inset-x-0 top-0 z-10 pointer-events-none"
-          style={{
-            height: "45%",
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%)",
-          }}
+          className="absolute inset-x-0 top-0 z-10 pointer-events-none crawl__top-fade"
         />
 
         {/* Text content */}
         <div className="relative z-20 w-full max-w-4xl px-4">
           <div
             ref={contentRef}
-            className="w-full"
-            style={{
-              transformOrigin: "50% 100%",
-              willChange: "transform",
-            }}
+            className="w-full crawl__content"
           >
             {/* Title */}
             <div className="text-center mb-20">

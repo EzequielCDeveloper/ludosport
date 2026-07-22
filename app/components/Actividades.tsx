@@ -42,7 +42,6 @@ export default function Actividades() {
             <article
               key={actividad.num}
               className="actividad-card flex-[0_0_85vw] md:flex-[0_0_45vw] lg:flex-[0_0_30vw] 2xl:flex-[0_0_25vw] 2xl:max-w-[380px] max-w-[400px] md:max-w-[380px] lg:max-w-[360px] bg-white/[0.015] backdrop-blur-[2px] border border-white/[0.06] border-b-4 border-b-[var(--color-yellow)]/40 overflow-hidden snap-start transition-transform duration-300 hover:-translate-y-1.5"
-              style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)" }}
             >
               <div className="aspect-[3/2] overflow-hidden">
                 <Image

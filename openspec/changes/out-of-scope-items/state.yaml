@@ -1,0 +1,9 @@
+change_name: out-of-scope-items
+created: 2026-07-21
+status: exploration
+completed_phases: [explore, propose, tasks]
+current_phase: apply
+apply_slice: 2
+artifact_store: openspec
+delivery_strategy: force-chained
+review_budget_lines: 400

@@ -248,6 +248,10 @@ body {
 }
 
 /* ─── CTA button ─── */
+.cta-btn--cyan {
+  box-shadow: 0 0 10px rgba(75,213,238,0.2), inset 0 0 5px rgba(75,213,238,0.1);
+  text-shadow: 0 0 2px rgba(75,213,238,0.5);
+}
 .cta-btn--cyan:hover {
   box-shadow: 0 0 20px rgba(75,213,238,0.6), inset 0 0 10px rgba(75,213,238,0.4) !important;
 }
@@ -272,6 +276,9 @@ body {
   font-family: var(--font-body);
   margin: 0.6rem 0.8rem;
   line-height: 1.5;
+}
+.leaflet-popup-content strong {
+  color: #ffe81f;
 }
 .leaflet-popup-close-button {
   color: var(--color-yellow) !important;
@@ -329,4 +336,45 @@ body {
     width: 100%;
     max-width: 280px;
   }
+}
+
+/* ─── Hero scanline overlay ─── */
+.hero__scanline {
+  background: repeating-linear-gradient(90deg, transparent 0px, transparent 120px, rgba(255, 255, 255, 0.015) 120px, rgba(255, 255, 255, 0.015) 121px);
+}
+
+/* ─── Hero bottom fade ─── */
+.hero__bottom-fade {
+  z-index: 20;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%);
+}
+
+/* ─── CTA section background gradients ─── */
+.cta__bg-gradients {
+  background: radial-gradient(ellipse at 25% 50%, color-mix(in srgb, var(--color-blue) 12%, transparent) 0%, transparent 60%), radial-gradient(ellipse at 75% 50%, color-mix(in srgb, var(--color-red) 12%, transparent) 0%, transparent 60%);
+}
+
+/* ─── Actividad card shadow ─── */
+.actividad-card {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* ─── Rango card base shadows ─── */
+.rango-card--default {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.rango-card--maestro {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* ─── StarWarsCrawl top fade ─── */
+.crawl__top-fade {
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, transparent 100%);
+}
+
+/* ─── StarWarsCrawl content base ─── */
+.crawl__content {
+  transform-origin: 50% 100%;
+  will-change: transform;
 }
