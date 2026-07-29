@@ -26,7 +26,7 @@ export function useHorizontalCarousel(
   const snapWidth = useCallback(() => {
     const el = ref.current;
     if (!el) return 0;
-    const track = el.firstElementChild;
+    const track = el.querySelector(".actividades__track");
     if (!track) return 0;
     const cards = track.children;
     if (cards.length < 2) return 0;

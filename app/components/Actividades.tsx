@@ -2,30 +2,30 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { ACTIVIDADES } from "@/lib/constants";
+import { ACTIVIDADES, ACTIVIDADES_SUBTITLE } from "@/lib/constants";
 import { useHorizontalCarousel } from "@/app/hooks/useHorizontalCarousel";
 
-export default function Actividades() {
+export default function Actividades(): React.JSX.Element {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { currentIndex, scrollTo, next, prev, isFirst, isLast } =
     useHorizontalCarousel(scrollRef, ACTIVIDADES.length);
   const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
 
   return (
-    <section id="actividades" className="py-24 overflow-hidden">
+    <section id="actividades" className="py-24 overflow-y-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-4xl sm:text-5xl text-[var(--color-yellow)] text-center tracking-wider mb-4">
           ACTIVIDADES
         </h2>
         <p className="font-body text-[var(--color-yellow)] uppercase tracking-[0.05em] text-center mb-12">
-          10 disciplinas que transforman
+          {ACTIVIDADES_SUBTITLE}
         </p>
       </div>
 
       {/* Scroll-snap carousel */}
       <div
         ref={scrollRef}
-        className="actividades__scroll overflow-x-auto overflow-y-hidden snap-x snap-mandatory"
+        className="actividades__scroll w-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory"
         tabIndex={0}
         role="region"
         aria-roledescription="carrusel"

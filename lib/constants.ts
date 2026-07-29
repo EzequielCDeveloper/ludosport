@@ -36,6 +36,26 @@ export const NAV_LINKS: NavLink[] = [
   { href: "#contacto", label: "Contacto", cta: true },
 ];
 
+// ─── StarWarsCrawl ───────────────────────────────────────
+export const CRAWL_TEXTS: string[] = [
+  "En una época donde las pantallas dominan el tiempo libre de los jóvenes...",
+  "Encontrar actividades que promuevan el ejercicio, la disciplina y la convivencia sana se ha vuelto más importante que nunca.",
+  "Por ello nace Drake Academy, un espacio dedicado al desarrollo físico y personal de niños, jóvenes y adultos mediante la práctica de LudoSport.",
+  "Una disciplina deportiva moderna que combina acondicionamiento físico, coordinación, estrategia, trabajo en equipo y autocontrol.",
+];
+
+// ─── Actividades ─────────────────────────────────────────
+/** Subtitle displayed under the ACTIVIDADES heading. */
+export const ACTIVIDADES_SUBTITLE = "10 disciplinas que transforman";
+
+// ─── Map Section ─────────────────────────────────────────
+export const MAP_STRINGS = {
+  popupHtml: "<strong>Drake Academy</strong><br/>LudoSport San Luis Río Colorado",
+  loadingText: "Cargando mapa...",
+  errorTitle: "No se pudo cargar el mapa",
+  fallbackLinkText: "Ver en Google Maps",
+} as const;
+
 // ─── Valores ─────────────────────────────────────────────
 import type { ComponentType, SVGProps } from "react";
 import DisciplinaIcon from "@/app/components/icons/DisciplinaIcon";

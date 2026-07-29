@@ -3,9 +3,9 @@
 import type { Map as LeafletMap } from "leaflet";
 import { useEffect, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
-import { ACADEMY } from "@/lib/constants";
+import { ACADEMY, MAP_STRINGS } from "@/lib/constants";
 
-export default function MapSection() {
+export default function MapSection(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
   const [loaded, setLoaded] = useState(false);
@@ -30,9 +30,9 @@ export default function MapSection() {
         });
         mapRef.current = map;
 
-        // CARTO Dark Matter tiles — free, no API key, dark themed.
+        // CARTO Positron tiles — free, no API key, light themed.
         L.tileLayer(
-          "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+          "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
           {
             attribution:
               '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -56,9 +56,7 @@ export default function MapSection() {
 
         L.marker([ACADEMY.coordinates.lat, ACADEMY.coordinates.lng], { icon: markerIcon })
           .addTo(map)
-          .bindPopup(
-            '<strong>Drake Academy</strong><br/>LudoSport San Luis Río Colorado',
-          );
+          .bindPopup(MAP_STRINGS.popupHtml);
 
         // Hide spinner once Leaflet has its first render
         map.whenReady(() => setLoaded(true));
@@ -77,42 +75,42 @@ export default function MapSection() {
   }, []);
 
   return (
-    <section className="py-24">
+    <section id="ubicacion" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-4xl sm:text-5xl text-[var(--color-yellow)] text-center tracking-wider mb-4">
           UBICACIÓN
         </h2>
-        <div className="max-w-4xl mx-auto rounded-sm overflow-hidden border border-white/[0.06] relative">
+        <div className="max-w-4xl mx-auto rounded-sm overflow-hidden border border-gray-300 relative">
           {!loaded && !error && (
             <div
-              className="absolute inset-0 z-10 bg-black flex items-center justify-center"
+              className="absolute inset-0 z-10 bg-white flex items-center justify-center"
               role="status"
               aria-live="polite"
             >
-              <div className="w-6 h-6 border-2 border-white/20 border-t-[var(--color-cyan)] rounded-full animate-spin" />
-              <span className="sr-only">Cargando mapa...</span>
+              <div className="w-6 h-6 border-2 border-gray-300 border-t-[var(--color-cyan)] rounded-full animate-spin" />
+              <span className="sr-only">{MAP_STRINGS.loadingText}</span>
             </div>
           )}
           {error && (
-            <div className="absolute inset-0 z-10 bg-black flex flex-col items-center justify-center gap-4 p-6 text-center">
-              <p className="text-white text-lg font-display">
-                No se pudo cargar el mapa
+            <div className="absolute inset-0 z-10 bg-white flex flex-col items-center justify-center gap-4 p-6 text-center">
+              <p className="text-gray-900 text-lg font-display">
+                {MAP_STRINGS.errorTitle}
               </p>
-              <p className="text-gray-aa text-sm">{ACADEMY.address}</p>
+              <p className="text-gray-600 text-sm">{ACADEMY.address}</p>
               <a
                 href={`https://maps.google.com/?q=${ACADEMY.coordinates.lat},${ACADEMY.coordinates.lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan underline text-sm hover:text-white transition-colors"
+                className="text-blue-600 underline text-sm hover:text-blue-800 transition-colors"
                 aria-label={`Ver ${ACADEMY.shortName} en Google Maps`}
               >
-                Ver en Google Maps
+                {MAP_STRINGS.fallbackLinkText}
               </a>
             </div>
           )}
           <div
             ref={containerRef}
-            className="h-[380px] w-full bg-black"
+            className="h-[380px] w-full bg-white"
             tabIndex={0}
             aria-label="Mapa: ubicación de Drake Academy en San Luis Río Colorado"
             role="application"
