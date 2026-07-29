@@ -13,11 +13,14 @@ import CtaFinal from "@/app/components/CtaFinal";
 import MapSection from "@/app/components/MapSection";
 import Footer from "@/app/components/Footer";
 import WhatsAppFloat from "@/app/components/WhatsAppFloat";
+import ScrollProgress from "@/app/components/ScrollProgress";
+import BackToTop from "@/app/components/BackToTop";
 
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
       <SkipLink />
+      <ScrollProgress />
       <Starfield />
       <Navbar />
       <Hero />
@@ -32,6 +35,7 @@ export default function Home() {
       <MapSection />
       <Footer />
       <WhatsAppFloat />
+      <BackToTop />
     </main>
   );
 }

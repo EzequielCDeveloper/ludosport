@@ -13,9 +13,14 @@ export default function FAQs() {
           Todo lo que necesitas saber antes de empezar
         </p>
 
+        {/* Screen-reader hint for FAQ interaction */}
+        <span className="sr-only">
+          Abre y cierra las preguntas para ver las respuestas. En navegadores modernos, abrir una pregunta cierra automáticamente las demás.
+        </span>
+
         <div className="divide-y divide-[var(--color-black-3)]">
           {FAQS.map((faq) => (
-            <details key={faq.question} className="group">
+            <details key={faq.question} name="faq-accordion" className="group">
               <summary className="flex cursor-pointer items-center justify-between py-5 font-display text-base tracking-wider uppercase text-left text-white hover:text-[var(--color-yellow)] transition-colors duration-200 list-none [&::-webkit-details-marker]:hidden">
                 <span>{faq.question}</span>
                 <svg
@@ -32,10 +37,15 @@ export default function FAQs() {
                 </svg>
               </summary>
               <div className="pb-5">
-                <p
-                  className="font-body text-base text-white leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: faq.answer }}
-                />
+                <p className="font-body text-base text-white leading-relaxed">
+                  {faq.answerParts.map((part, i) =>
+                    part.type === "strong" ? (
+                      <strong key={i}>{part.content}</strong>
+                    ) : (
+                      <span key={i}>{part.content}</span>
+                    )
+                  )}
+                </p>
               </div>
             </details>
           ))}

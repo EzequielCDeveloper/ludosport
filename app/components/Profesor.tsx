@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Profesor() {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <section id="profesor" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,13 +14,33 @@ export default function Profesor() {
           <div className="flex justify-center">
             <div className="relative w-full max-w-md profesor__img-wrapper stagger">
               <div className="aspect-[5/6]">
-                <Image
-                  src="/placeholders/kid-learning-with-teacher.jpg"
-                  alt="Instructor de esgrima con sable de madera junto a un alumno en el área de entrenamiento de Drake Academy"
-                  fill
-                  className="object-cover profesor__img"
-                  sizes="(max-width: 768px) 100vw, 500px"
-                />
+                {imgError ? (
+                  <div className="absolute inset-0 bg-[var(--color-black-2)] flex items-center justify-center">
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      className="text-[var(--color-gray-aa)]"
+                    >
+                      <path
+                        d="M12 14l3-3m0 0l3 3m-3-3v8M3 17V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </div>
+                ) : (
+                  <Image
+                    src="/placeholders/kid-learning-with-teacher.jpg"
+                    alt="Instructor de esgrima con sable de madera junto a un alumno en el área de entrenamiento de Drake Academy"
+                    fill
+                    className="object-cover profesor__img"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    onError={() => setImgError(true)}
+                  />
+                )}
               </div>
             </div>
           </div>

@@ -1,6 +1,9 @@
 import { ACADEMY } from "@/lib/constants";
+import CtaButton from "@/app/components/CtaButton";
 
 export default function CtaFinal() {
+  const waUrl = new URL(ACADEMY.whatsappUrl);
+
   return (
     <section id="contacto" className="relative py-24 overflow-hidden">
       {/* Background with radial gradients */}
@@ -41,15 +44,17 @@ export default function CtaFinal() {
         </div>
 
         {/* WhatsApp CTA */}
-        <a
-          href={ACADEMY.whatsappUrl}
+        <CtaButton
+          href={waUrl.href}
           target="_blank"
           rel="noopener noreferrer"
+          aria-describedby="wa-hint"
           aria-label="Quiero mi primera clase gratis (se abre en WhatsApp)"
-          className="inline-block font-display text-lg uppercase tracking-wider text-[var(--color-cyan)] bg-transparent border-2 border-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black px-10 py-4 hover:scale-[1.05] active:scale-[0.97] cta-btn--cyan transition-[color,background-color,transform,box-shadow] duration-300 animate-fade-up"
+          variant="cyan"
+          className="text-lg px-10 py-4 animate-fade-up"
         >
           Quiero mi primera clase gratis
-        </a>
+        </CtaButton>
       </div>
     </section>
   );

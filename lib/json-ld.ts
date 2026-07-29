@@ -86,7 +86,7 @@ export function generateLocalBusiness(): string {
           name: faq.question,
           acceptedAnswer: {
             "@type": "Answer",
-            text: faq.answer,
+            text: faq.answerParts.map((p) => p.content).join(""),
           },
         })),
       },
@@ -104,5 +104,5 @@ export function generateLocalBusiness(): string {
     ],
   };
 
-  return JSON.stringify(schema, null, 2);
+  return JSON.stringify(schema, null, 2).replace(/</g, "\\u003c");
 }

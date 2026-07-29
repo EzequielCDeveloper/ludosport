@@ -29,3 +29,35 @@ React components MUST NOT manipulate the DOM outside React's rendering cycle (no
 
 ### Image Optimization
 Above-the-fold Next.js Image components MUST use the `priority` attribute. All Image components SHOULD specify `sizes` for responsive image selection.
+
+---
+
+## Added by fix-audit-warnings-suggestions (2026-07-28)
+
+### shared-components
+
+#### SPEC-FAWS-040: CtaButton Shared Component (HE-11)
+
+The system MUST provide a `<CtaButton>` component with 4 variants (`cyan`, `white`, `blue`, `whatsapp`) that centralize WhatsApp URL construction, `target="_blank"`, `rel="noopener noreferrer"`, and consistent `aria-label` patterns.
+
+**Acceptance**: All 4 CTA contexts use `<CtaButton>` with appropriate variant. Visual output matches current design.
+
+| # | Scenario | GIVEN | WHEN | THEN |
+|---|----------|-------|------|------|
+| 1 | Hero CTA | Hero uses `<CtaButton variant="cyan">` | Renders | Same visual as current cyan border + white border style |
+| 2 | Navbar CTA | Navbar uses `<CtaButton variant="blue">` | Renders | Same visual as current blue background style |
+| 3 | CtaFinal CTA | CtaFinal uses `<CtaButton variant="cyan">` | Renders | Same visual as current cyan glow style |
+| 4 | WhatsApp float | Float uses `<CtaButton variant="whatsapp">` | Renders | Same visual as current green circle style |
+
+### unused-css-removal
+
+#### SPEC-FAWS-043: Remove Unused Radius Tokens (HE-12)
+
+The system MUST remove the unused `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-full` CSS custom properties from `globals.css` since they are not consumed by any component.
+
+**Acceptance**: CSS custom properties for radius are absent from `globals.css`. No visual regressions.
+
+| # | Scenario | GIVEN | WHEN | THEN |
+|---|----------|-------|------|------|
+| 1 | CSS inspection | Styles examined | `@theme inline` block | No `--radius-*` variables present |
+| 2 | Visual parity | Page renders | All components compared | Identical to pre-change (Tailwind utilities unaffected) |

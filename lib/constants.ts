@@ -6,6 +6,10 @@ export const ACADEMY = {
   whatsappUrl: "https://wa.me/526531649951",
   address: "Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora",
   coordinates: { lat: 32.461111, lng: -114.795667 },
+  /** Geo metadata string for meta tags: "lat;lng" */
+  coordinatesMeta: "32.461111;-114.795667",
+  /** Geo metadata string for meta tags: "lat, lng" */
+  coordinatesICBM: "32.461111, -114.795667",
   cp: "83447",
   sameAs: {
     facebook: "https://facebook.com/ludosportdrake",
@@ -149,41 +153,52 @@ export const ACTIVIDADES: Actividad[] = [
 ];
 
 // ─── FAQs ────────────────────────────────────────────────
+export type AnswerPart = { type: "text" | "strong"; content: string };
+
 export interface FAQ {
   question: string;
-  answer: string;
+  answerParts: AnswerPart[];
 }
 
 export const FAQS: FAQ[] = [
   {
     question: "¿Necesito experiencia previa?",
-    answer:
-      "No, absolutamente no. Nuestro programa está diseñado desde cero para principiantes. Empezamos con fundamentos básicos y cada alumno avanza a su propio ritmo. Desde la primera clase aprenderás movimientos reales con sable de madera.",
+    answerParts: [
+      { type: "text", content: "No, absolutamente no. Nuestro programa está diseñado desde cero para principiantes. Empezamos con fundamentos básicos y cada alumno avanza a su propio ritmo. Desde la primera clase aprenderás movimientos reales con sable de madera." },
+    ],
   },
   {
     question: "¿Qué incluye la primera clase gratis?",
-    answer:
-      "La primera clase incluye: introducción a la esgrima con sable de madera, calentamiento guiado, técnica básica de agarre y postura, ejercicios de desplazamiento y un duelo de práctica supervisado. Te prestamos el equipo necesario. Solo trae ropa cómoda y muchas ganas.",
+    answerParts: [
+      { type: "text", content: "La primera clase incluye: introducción a la esgrima con sable de madera, calentamiento guiado, técnica básica de agarre y postura, ejercicios de desplazamiento y un duelo de práctica supervisado. Te prestamos el equipo necesario. Solo trae ropa cómoda y muchas ganas." },
+    ],
   },
   {
     question: "¿Cuáles son los horarios y costos?",
-    answer:
-      "<strong>Horarios:</strong> Jueves y Viernes de 5:00 a 7:00 pm, Sábados de 4:30 a 7:00 pm.<br><br><strong>Costos:</strong> Primera clase completamente gratis. $200 la primera semana. $300 semanal después. 50% de descuento para el segundo hermano.",
+    answerParts: [
+      { type: "strong", content: "Horarios:" },
+      { type: "text", content: " Jueves y Viernes de 5:00 a 7:00 pm, Sábados de 4:30 a 7:00 pm. " },
+      { type: "strong", content: "Costos:" },
+      { type: "text", content: " Primera clase completamente gratis. $200 la primera semana. $300 semanal después. 50% de descuento para el segundo hermano." },
+    ],
   },
   {
     question: "¿Dónde están ubicados?",
-    answer:
-      "Nos encontramos en Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora. Es una ubicación céntrica y de fácil acceso. Contamos con espacio techado y todas las medidas de seguridad necesarias.",
+    answerParts: [
+      { type: "text", content: "Nos encontramos en Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora. Es una ubicación céntrica y de fácil acceso. Contamos con espacio techado y todas las medidas de seguridad necesarias." },
+    ],
   },
   {
     question: "¿Hay clases para diferentes edades?",
-    answer:
-      "Sí. Trabajamos con dos segmentos principales: niños (de 7 a 12 años) y jóvenes (de 13 años en adelante). Adaptamos la intensidad, la técnica y los ejercicios según el grupo de edad, asegurando que cada alumno reciba la atención que necesita.",
+    answerParts: [
+      { type: "text", content: "Sí. Trabajamos con dos segmentos principales: niños (de 7 a 12 años) y jóvenes (de 13 años en adelante). Adaptamos la intensidad, la técnica y los ejercicios según el grupo de edad, asegurando que cada alumno reciba la atención que necesita." },
+    ],
   },
   {
     question: "¿Cómo funcionan los rangos?",
-    answer:
-      "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría.",
+    answerParts: [
+      { type: "text", content: "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría." },
+    ],
   },
 ];
 

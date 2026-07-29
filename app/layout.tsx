@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Exo_2 } from "next/font/google";
 import { generateLocalBusiness } from "@/lib/json-ld";
+import { ACADEMY } from "@/lib/constants";
 import "./globals.css";
 
 const anton = Anton({
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "MX-SON",
     "geo.placename": "San Luis Río Colorado",
-    "geo.position": "32.452;-114.7635",
-    ICBM: "32.452, -114.7635",
-    "places:location": "32.452,-114.7635",
+    "geo.position": ACADEMY.coordinatesMeta,
+    ICBM: ACADEMY.coordinatesICBM,
+    "places:location": ACADEMY.coordinatesMeta.replace(";", ","),
     "twitter:card": "summary",
   },
 };

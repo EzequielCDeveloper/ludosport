@@ -28,9 +28,9 @@ export default function Footer() {
 
           {/* Navigation links */}
           <div className="text-center md:text-left">
-            <h4 className="font-display text-xs text-[var(--color-gray-aa)] uppercase tracking-[0.15em] mb-4">
+            <h3 className="font-display text-xs text-[var(--color-gray-aa)] uppercase tracking-[0.15em] mb-4">
               Navegación
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -47,9 +47,9 @@ export default function Footer() {
 
           {/* Contact + Social */}
           <div className="text-center md:text-left">
-            <h4 className="font-display text-xs text-[var(--color-gray-aa)] uppercase tracking-[0.15em] mb-4">
+            <h3 className="font-display text-xs text-[var(--color-gray-aa)] uppercase tracking-[0.15em] mb-4">
               Contacto
-            </h4>
+            </h3>
             <div className="space-y-2 mb-5">
               <p className="font-body text-sm text-white/70">
                 WhatsApp: +52 653 164 9951

@@ -427,6 +427,10 @@
   }
 }
 
+.stars--paused {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .stars {
     animation: none;

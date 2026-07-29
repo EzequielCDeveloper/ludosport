@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/constants";
 import { useScrollNav } from "@/app/hooks/useScrollNav";
+import { useFocusTrap } from "@/app/hooks/useFocusTrap";
+import CtaButton from "@/app/components/CtaButton";
 
 export default function NavbarClient() {
   const { isSolid, activeSection } = useScrollNav();
@@ -35,6 +37,13 @@ export default function NavbarClient() {
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
   }, [menuOpen, closeMenu]);
+
+  // Focus trap: keep Tab/Shift+Tab within the mobile menu while open
+  useFocusTrap(menuRef, menuOpen);
+
+  // Feature-detect inert support for fallback (SPEC-FAWS-009)
+  const supportsInert =
+    typeof HTMLElement !== "undefined" && "inert" in HTMLElement.prototype;
 
   return (
     <nav
@@ -74,24 +83,30 @@ export default function NavbarClient() {
         <ul className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className={`font-display text-sm uppercase tracking-[0.08em] transition-colors duration-200 ${
-                  link.cta
-                    ? "text-white bg-[var(--color-blue, #0a58ca)] hover:bg-[var(--color-red-dark)] px-4 py-2"
-                    : "text-white hover:text-[var(--color-yellow)]"
-                } ${
-                  !link.cta && activeSection === link.href.slice(1)
-                    ? "navbar__link--active"
-                    : ""
-                }`}
-                {...(!link.cta && activeSection === link.href.slice(1)
-                  ? { "aria-current": "page" as const }
-                  : {})}
-                {...(link.cta ? { title: "Contáctanos" } : {})}
-              >
-                {link.label}
-              </a>
+              {link.cta ? (
+                <CtaButton
+                  href={link.href}
+                  variant="blue"
+                  className="font-display text-sm uppercase tracking-[0.08em] px-4 py-2"
+                  title="Contáctanos"
+                >
+                  {link.label}
+                </CtaButton>
+              ) : (
+                <a
+                  href={link.href}
+                  className={`font-display text-sm uppercase tracking-[0.08em] transition-colors duration-200 text-white hover:text-[var(--color-yellow)] ${
+                    activeSection === link.href.slice(1)
+                      ? "navbar__link--active"
+                      : ""
+                  }`}
+                  {...(activeSection === link.href.slice(1)
+                    ? { "aria-current": "page" as const }
+                    : {})}
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -101,8 +116,18 @@ export default function NavbarClient() {
           ref={menuRef}
           className="fixed top-0 w-[75%] max-w-xs h-full bg-[var(--color-black-2)] flex flex-col justify-center items-center gap-8 z-[1000] transition-[right] duration-300 ease-out md:hidden"
           style={{ right: menuOpen ? "0" : "-100%" }}
-          aria-hidden={!menuOpen}
-          {...(!menuOpen ? { inert: true } : {})}
+          {...(menuOpen
+            ? {
+                role: "dialog" as const,
+                "aria-modal": "true" as const,
+                "aria-label": "Menú de navegación",
+              }
+            : {
+                "aria-hidden": true,
+                ...(supportsInert
+                  ? { inert: true }
+                  : { tabIndex: -1 }),
+              })}
         >
           {/* Close button */}
           <button
@@ -114,27 +139,36 @@ export default function NavbarClient() {
           </button>
 
           {NAV_LINKS.map((link, index) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={closeMenu}
-              ref={index === 0 ? firstLinkRef : undefined}
-              className={`font-display text-lg uppercase tracking-[0.08em] transition-colors duration-200 active:opacity-70 ${
-                link.cta
-                  ? "text-white bg-[var(--color-blue, #0a58ca)] hover:bg-[var(--color-red-dark)] px-6 py-3"
-                  : "text-white hover:text-[var(--color-yellow)]"
-              } ${
-                !link.cta && activeSection === link.href.slice(1)
-                  ? "navbar__link--active"
-                  : ""
-              }`}
-              {...(!link.cta && activeSection === link.href.slice(1)
-                ? { "aria-current": "page" as const }
-                : {})}
-              {...(link.cta ? { title: "Contáctanos" } : {})}
-            >
-              {link.label}
-            </a>
+            link.cta ? (
+              <CtaButton
+                key={link.href}
+                href={link.href}
+                variant="blue"
+                className={`font-display text-lg uppercase tracking-[0.08em] px-6 py-3 active:opacity-70`}
+                onClick={closeMenu}
+                ref={index === 0 ? firstLinkRef : undefined}
+                title="Contáctanos"
+              >
+                {link.label}
+              </CtaButton>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                ref={index === 0 ? firstLinkRef : undefined}
+                className={`font-display text-lg uppercase tracking-[0.08em] transition-colors duration-200 active:opacity-70 text-white hover:text-[var(--color-yellow)] ${
+                  activeSection === link.href.slice(1)
+                    ? "navbar__link--active"
+                    : ""
+                }`}
+                {...(activeSection === link.href.slice(1)
+                  ? { "aria-current": "page" as const }
+                  : {})}
+              >
+                {link.label}
+              </a>
+            )
           ))}
         </div>
 

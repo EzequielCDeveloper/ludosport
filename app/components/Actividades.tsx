@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { ACTIVIDADES } from "@/lib/constants";
 import { useHorizontalCarousel } from "@/app/hooks/useHorizontalCarousel";
@@ -9,6 +9,7 @@ export default function Actividades() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const { currentIndex, scrollTo, next, prev, isFirst, isLast } =
     useHorizontalCarousel(scrollRef, ACTIVIDADES.length);
+  const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
 
   return (
     <section id="actividades" className="py-24 overflow-hidden">
@@ -26,6 +27,9 @@ export default function Actividades() {
         ref={scrollRef}
         className="actividades__scroll overflow-x-auto overflow-y-hidden snap-x snap-mandatory"
         tabIndex={0}
+        role="region"
+        aria-roledescription="carrusel"
+        aria-label="Carrusel de actividades — usa las flechas para navegar"
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") {
             next();
@@ -37,6 +41,10 @@ export default function Actividades() {
           }
         }}
       >
+        {/* SPEC-FAWS-017: sr-only keyboard navigation hint */}
+        <span className="sr-only">
+          Usa las flechas izquierda y derecha para navegar entre actividades
+        </span>
         <div className="actividades__track flex gap-6 px-[5vw]">
           {ACTIVIDADES.map((actividad) => (
             <article
@@ -44,14 +52,36 @@ export default function Actividades() {
               className="actividad-card flex-[0_0_85vw] md:flex-[0_0_45vw] lg:flex-[0_0_30vw] 2xl:flex-[0_0_25vw] 2xl:max-w-[380px] max-w-[400px] md:max-w-[380px] lg:max-w-[360px] bg-white/[0.015] backdrop-blur-[2px] border border-white/[0.06] border-b-4 border-b-[var(--color-yellow)]/40 overflow-hidden snap-start transition-transform duration-300 hover:-translate-y-1.5"
             >
               <div className="aspect-[3/2] overflow-hidden">
-                <Image
-                  src={actividad.image}
-                  alt={actividad.imageAlt}
-                  width={600}
-                  height={400}
-                  sizes="(max-width: 768px) 85vw, (max-width: 1024px) 45vw, 30vw"
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
+                {imgErrors[actividad.num] ? (
+                  <div className="w-full h-full bg-[var(--color-black-2)] flex items-center justify-center">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      className="text-[var(--color-gray-aa)]"
+                    >
+                      <path
+                        d="M12 14l3-3m0 0l3 3m-3-3v8M3 17V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </div>
+                ) : (
+                  <Image
+                    src={actividad.image}
+                    alt={actividad.imageAlt}
+                    width={600}
+                    height={400}
+                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 45vw, 30vw"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    onError={() =>
+                      setImgErrors((prev) => ({ ...prev, [actividad.num]: true }))
+                    }
+                  />
+                )}
               </div>
               <div className="p-6">
                 <span className="font-display text-base text-[var(--color-yellow)] block mb-1">
@@ -88,19 +118,27 @@ export default function Actividades() {
         </button>
 
         {/* Dot indicators */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           {ACTIVIDADES.map((actividad, i) => (
             <button
               key={actividad.num}
               onClick={() => scrollTo(i)}
-                className={`w-6 h-6 border-2 transition-colors duration-300 ${
+              className={`w-6 h-6 border-2 transition-colors duration-300 ${
                 i === currentIndex
                   ? "bg-[var(--color-yellow)] border-[var(--color-yellow)]"
                   : "bg-[var(--color-black-3)] border-[var(--color-gray-aa)]"
               }`}
               aria-label={`Ir a actividad ${i + 1}`}
+              aria-current={i === currentIndex ? "true" : "false"}
             />
           ))}
+          {/* SPEC-FAWS-016: visible position counter */}
+          <span
+            className="font-body text-sm text-[var(--color-yellow)] ml-2 tabular-nums"
+            aria-live="polite"
+          >
+            {currentIndex + 1} / {ACTIVIDADES.length}
+          </span>
         </div>
 
         {/* Next arrow */}

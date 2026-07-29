@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
@@ -13,6 +14,10 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
   return (
     <>
       <Starfield />
@@ -34,20 +39,28 @@ export default function Error({
             Ocurrió un error inesperado. Por favor, intenta de nuevo.
           </p>
 
-          {/* ID de error para debugging */}
-          {error.digest && (
+          {/* ID de error para debugging — solo en desarrollo */}
+          {process.env.NODE_ENV !== "production" && error.digest && (
             <p className="font-body text-xs text-white/30 mb-8">
               Error ID: {error.digest}
             </p>
           )}
 
-          {/* Boton de reintentar */}
-          <button
-            onClick={reset}
-            className="font-display text-sm uppercase tracking-[0.15em] px-8 py-3 border-2 border-[var(--color-cyan)] text-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black transition-all duration-300"
-          >
-            Intentar de nuevo
-          </button>
+          {/* Botones de acción */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <button
+              onClick={reset}
+              className="font-display text-sm uppercase tracking-[0.15em] px-8 py-3 border-2 border-[var(--color-cyan)] text-[var(--color-cyan)] hover:bg-[var(--color-cyan)] hover:text-black transition-all duration-300"
+            >
+              Intentar de nuevo
+            </button>
+            <Link
+              href="/"
+              className="font-display text-sm uppercase tracking-[0.15em] px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300"
+            >
+              Volver al inicio
+            </Link>
+          </div>
 
           {/* Enlaces a secciones */}
           <div className="mt-12">

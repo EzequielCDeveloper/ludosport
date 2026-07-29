@@ -17,11 +17,6 @@
   --transition-base: 300ms ease;
   --transition-slow: 500ms ease;
 
-  /* Border-radius system */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
 }
 
 @theme inline {
@@ -83,6 +78,20 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-progress-bar {
+    transition: none !important;
+  }
+
+  .back-to-top-btn {
+    transition: none !important;
+  }
+}
+
 /* ---- BASE RESET ---- */
 *,
 *::before,
@@ -118,17 +127,26 @@ body {
     font-size: 2.2rem;
   }
 }
+/* Base: solid yellow for browsers without text-stroke (Firefox) */
 .hero__title-stroke {
-  color: var(--color-red);
-  -webkit-text-stroke: 4px var(--color-yellow);
-  -webkit-text-fill-color: transparent;
-  text-stroke: 4px var(--color-yellow);
-  text-fill-color: transparent;
+  color: var(--color-yellow);
 }
-@media (max-width: 767px) {
+
+/* Progressive enhancement: stroke effect for WebKit/Blink */
+@supports (-webkit-text-stroke: 4px var(--color-yellow)) {
   .hero__title-stroke {
-    -webkit-text-stroke: 1.5px var(--color-yellow);
-    text-stroke: 1.5px var(--color-yellow);
+    color: var(--color-red);
+    -webkit-text-stroke: 4px var(--color-yellow);
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Mobile: thinner stroke via progressive enhancement */
+@media (max-width: 767px) {
+  @supports (-webkit-text-stroke: 1.5px var(--color-yellow)) {
+    .hero__title-stroke {
+      -webkit-text-stroke-width: 1.5px;
+    }
   }
 
   .hero__title,
