@@ -1,96 +1,71 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("StarWarsCrawl Component", () => {
+test.describe("StarWarsCrawl — static implementation", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
   });
 
-  test("should render StarWarsCrawl initially", async ({ page }) => {
-    // Check that the crawl section exists
-    const crawlSection = page.locator("text=LUDOSPORT");
-    await expect(crawlSection).toBeVisible();
+  test("should render the crawl section with title", async ({ page }) => {
+    const title = page.locator("#historia h2");
+    await expect(title).toBeVisible();
+    await expect(title).toHaveText("LUDOSPORT");
   });
 
-  test("should show 'Saltar intro' button when not skipped", async ({ page }) => {
-    const skipButton = page.getByRole("button", { name: /saltar intro/i });
-    await expect(skipButton).toBeVisible();
+  test("should render the subtitle", async ({ page }) => {
+    const subtitle = page.locator("#historia p");
+    await expect(subtitle.first()).toBeVisible();
+    await expect(subtitle.first()).toHaveText("Drake Academy");
   });
 
-  test("should hide entire crawl component after clicking skip button", async ({ page }) => {
-    // Click skip button
-    const skipButton = page.getByRole("button", { name: /saltar intro/i });
-    await skipButton.click();
+  test("should render all four narrative paragraphs", async ({ page }) => {
+    const paragraphs = page.locator("#historia .space-y-10 p");
+    await expect(paragraphs).toHaveCount(4);
 
-    // Wait for scroll animation
-    await page.waitForTimeout(500);
+    // First paragraph should be visible and contain the opening line
+    const firstPara = paragraphs.first();
+    await expect(firstPara).toBeVisible();
+    await expect(firstPara).toContainText("En una época donde las pantallas");
+  });
 
-    // BUG: The fixed panel should be completely hidden, but it remains visible
-    // Check that the crawl text is NOT visible
-    const crawlText = page.locator("text=LUDOSPORT");
-    await expect(crawlText).not.toBeVisible({ timeout: 2000 });
+  test("should not block other page sections", async ({ page }) => {
+    // The crawl is a static section — it should coexist with other sections
+    const hero = page.locator("#hero");
+    const misionVision = page.locator("#mision-vision");
 
-    // Check that other sections are visible
-    const misionVision = page.locator("text=MISIÓN");
+    await expect(hero).toBeVisible();
+    await misionVision.scrollIntoViewIfNeeded();
     await expect(misionVision).toBeVisible();
-
-    const valores = page.locator("text=VALORES");
-    await expect(valores).toBeVisible();
   });
 
-  test("should scroll to #propuesta section after skipping", async ({ page }) => {
-    // Click skip button
-    const skipButton = page.getByRole("button", { name: /saltar intro/i });
-    await skipButton.click();
-
-    // Wait for smooth scroll
-    await page.waitForTimeout(1000);
-
-    // Check that we scrolled to the propuesta section (Actividades)
-    const actividadesSection = page.locator("#propuesta");
-    await expect(actividadesSection).toBeInViewport();
-  });
-
-  test("should not show crawl overlay blocking the page after skip", async ({ page }) => {
-    // Click skip button
-    const skipButton = page.getByRole("button", { name: /saltar intro/i });
-    await skipButton.click();
-
-    await page.waitForTimeout(500);
-
-    // BUG: The fixed overlay with z-40 remains visible, blocking other content
-    // Check that we can interact with elements below the crawl
-    const navbar = page.locator("nav").first();
-    await expect(navbar).toBeVisible();
-
-    // Try to click on a navbar link - should work if crawl is properly hidden
-    const heroSection = page.locator("#hero");
-    if (await heroSection.isVisible()) {
-      await heroSection.scrollIntoViewIfNeeded();
-      await expect(heroSection).toBeInViewport();
-    }
-  });
-
-  test("should render all page sections after skipping", async ({ page }) => {
-    // Click skip button
-    const skipButton = page.getByRole("button", { name: /saltar intro/i });
-    await skipButton.click();
-
-    await page.waitForTimeout(500);
-
-    // BUG: Only MapSection renders, other sections are blocked by the visible overlay
+  test("should render all page sections after the crawl", async ({ page }) => {
     const sections = [
-      { name: "MISIÓN", selector: "text=MISIÓN" },
-      { name: "VALORES", selector: "text=VALORES" },
-      { name: "PROFESOR", selector: "text=PROFESOR" },
-      { name: "ACTIVIDADES", selector: "text=ACTIVIDADES" },
-      { name: "RANGOS", selector: "text=RANGOS" },
-      { name: "FAQ", selector: "text=FAQ" },
-      { name: "CONTACTO", selector: "text=CONTACTO" },
+      { id: "#hero", name: "Hero" },
+      { id: "#historia", name: "Historia" },
+      { id: "#mision-vision", name: "Misión/Visión" },
+      { id: "#propuesta", name: "Valores" },
+      { id: "#profesor", name: "Profesor" },
+      { id: "#actividades", name: "Actividades" },
+      { id: "#rangos", name: "Rangos" },
+      { id: "#faqs", name: "FAQ" },
+      { id: "#contacto", name: "Contacto" },
+      { id: "#ubicacion", name: "Ubicación" },
     ];
 
-    for (const section of sections) {
-      const element = page.locator(section.selector);
-      await expect(element).toBeVisible({ timeout: 2000 });
+    for (const { id, name } of sections) {
+      const element = page.locator(id);
+      await element.scrollIntoViewIfNeeded();
+      await expect(element, `Section "${name}" should be visible`).toBeVisible({
+        timeout: 3000,
+      });
     }
+  });
+
+  test("should have a semantic section with correct id", async ({ page }) => {
+    const section = page.locator("section#historia");
+    await expect(section).toBeVisible();
+
+    // Verify it's a proper semantic section
+    const tagName = await section.evaluate((el) => el.tagName);
+    expect(tagName).toBe("SECTION");
   });
 });
