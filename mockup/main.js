@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
-  let lastScroll = 0;
   const onScrollNav = () => {
     const sy = window.scrollY;
     navbar.classList.toggle('navbar--solid', sy > 60);
-    lastScroll = sy;
   };
   window.addEventListener('scroll', onScrollNav, { passive: true });
   onScrollNav();

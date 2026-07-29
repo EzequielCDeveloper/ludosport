@@ -4,11 +4,12 @@ import userEvent from "@testing-library/user-event";
 import NavbarClient from "@/app/components/NavbarClient";
 import { NAV_LINKS } from "@/lib/constants";
 
-// Mock next/image
+// Mock next/image — using <img> in mock is intentional; this replaces next/image for tests
+// eslint-disable-next-line @next/next/no-img-element
 vi.mock("next/image", () => ({
   default: (props: Record<string, unknown>) => {
-    const { width, height, ...rest } = props;
-    return <img width={width as number} height={height as number} {...rest} />;
+    const { width, height, alt = "", ...rest } = props;
+    return <img width={width as number} height={height as number} alt={alt as string} {...rest} />;
   },
 }));
 

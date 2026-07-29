@@ -58,8 +58,8 @@ export default function NavbarClient() {
             alt=""
             width={48}
             height={48}
-            priority
-            className=""
+            preload
+            style={{ width: 48, height: 48 }}
           />
           <span className="font-star-jedi text-white tracking-widest text-lg">
             DRAKE ACADEMY
@@ -111,11 +111,13 @@ export default function NavbarClient() {
           ))}
         </ul>
 
-        {/* Mobile menu overlay */}
+        {/* Mobile menu overlay — suppressHydrationWarning: inert attribute is
+            applied client-only via feature detection (SPEC-FAWS-009) */}
         <div
           ref={menuRef}
           className="fixed top-0 w-[75%] max-w-xs h-full bg-[var(--color-black-2)] flex flex-col justify-center items-center gap-8 z-[1000] transition-[right] duration-300 ease-out md:hidden"
           style={{ right: menuOpen ? "0" : "-100%" }}
+          suppressHydrationWarning
           {...(menuOpen
             ? {
                 role: "dialog" as const,

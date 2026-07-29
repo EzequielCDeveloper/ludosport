@@ -56,6 +56,16 @@ export const MAP_STRINGS = {
   fallbackLinkText: "Ver en Google Maps",
 } as const;
 
+// ─── Profesor ────────────────────────────────────────────
+export const PROFESOR = {
+  heading: "EL MAESTRO",
+  name: "Maestro Vazquez",
+  quote: "El verdadero dominio comienza con el dominio de uno mismo",
+  bio: "Fundador de Ludo Sport Drake Academy, el Maestro Vazquez ha dedicado su vida a la enseñanza del sable de madera como herramienta de formación integral. Su metodología combina técnicas clásicas de esgrima con principios de desarrollo personal, creando un entorno donde cada alumno descubre su potencial atlético y su fuerza interior.",
+  imageSrc: "/placeholders/kid-learning-with-teacher.jpg",
+  imageAlt: "Instructor de esgrima con sable de madera junto a un alumno en el área de entrenamiento de Drake Academy",
+} as const;
+
 // ─── Valores ─────────────────────────────────────────────
 import type { ComponentType, SVGProps } from "react";
 import DisciplinaIcon from "@/app/components/icons/DisciplinaIcon";

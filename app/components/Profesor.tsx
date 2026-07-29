@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { PROFESOR } from "@/lib/constants";
 
 export default function Profesor() {
   const [imgError, setImgError] = useState(false);
@@ -13,7 +14,7 @@ export default function Profesor() {
           {/* Image */}
           <div className="flex justify-center">
             <div className="relative w-full max-w-md profesor__img-wrapper stagger">
-              <div className="aspect-[5/6]">
+              <div className="aspect-[5/6] relative">
                 {imgError ? (
                   <div className="absolute inset-0 bg-[var(--color-black-2)] flex items-center justify-center">
                     <svg
@@ -33,8 +34,8 @@ export default function Profesor() {
                   </div>
                 ) : (
                   <Image
-                    src="/placeholders/kid-learning-with-teacher.jpg"
-                    alt="Instructor de esgrima con sable de madera junto a un alumno en el área de entrenamiento de Drake Academy"
+                    src={PROFESOR.imageSrc}
+                    alt={PROFESOR.imageAlt}
                     fill
                     className="object-cover profesor__img"
                     sizes="(max-width: 768px) 100vw, 500px"
@@ -48,22 +49,16 @@ export default function Profesor() {
           {/* Content */}
           <div>
             <h2 className="font-display text-4xl sm:text-5xl text-[var(--color-yellow)] tracking-wider mb-2 text-left">
-              EL MAESTRO
+              {PROFESOR.heading}
             </h2>
             <h3 className="font-display text-2xl text-white mb-4">
-              Maestro Vazquez
+              {PROFESOR.name}
             </h3>
             <blockquote className="font-display text-lg text-[var(--color-cyan)] italic border-l-4 border-[var(--color-cyan)] pl-6 mb-6">
-              &ldquo;El verdadero dominio comienza con el dominio de uno
-              mismo&rdquo;
+              &ldquo;{PROFESOR.quote}&rdquo;
             </blockquote>
             <p className="font-body text-white leading-relaxed">
-              Fundador de Ludo Sport Drake Academy, el Maestro Vazquez ha
-              dedicado su vida a la enseñanza del sable de madera como
-              herramienta de formación integral. Su metodología combina técnicas
-              clásicas de esgrima con principios de desarrollo personal, creando
-              un entorno donde cada alumno descubre su potencial atlético y su
-              fuerza interior.
+              {PROFESOR.bio}
             </p>
           </div>
         </div>
