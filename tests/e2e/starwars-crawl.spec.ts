@@ -14,7 +14,7 @@ test.describe("StarWarsCrawl — static implementation", () => {
   test("should render the subtitle", async ({ page }) => {
     const subtitle = page.locator("#historia p");
     await expect(subtitle.first()).toBeVisible();
-    await expect(subtitle.first()).toHaveText("Drake Academy");
+    await expect(subtitle.first()).toHaveText("Ludo Sport Drake Academy");
   });
 
   test("should render all four narrative paragraphs", async ({ page }) => {
