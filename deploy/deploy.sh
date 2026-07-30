@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
-# Ludo Sport Drake Academy — VPS deploy
+# Ludo Sport Drake Academy — VPS deploy (Cloudflare proxy)
 # Usage: ./deploy/deploy.sh <vps-host> [vps-user] [remote-path]
 #
-# Examples:
-#   ./deploy/deploy.sh 192.168.1.100
-#   ./deploy/deploy.sh myserver.com root /var/www/ludosport
+# Prerequisites on the VPS:
+#   1. nginx installed:  apt install nginx -y
+#   2. Origin CA cert at: /etc/nginx/ssl/ludosport.com.pem
+#   3. Origin CA key at:   /etc/nginx/ssl/ludosport.com.key
+#
+# Get the cert from: Cloudflare Dashboard → SSL/TLS → Origin Server → Create Certificate
+# Save the .pem and .key files, then upload them once:
+#   ssh root@<vps> 'mkdir -p /etc/nginx/ssl'
+#   scp ludosport.com.pem root@<vps>:/etc/nginx/ssl/
+#   scp ludosport.com.key root@<vps>:/etc/nginx/ssl/
+#   ssh root@<vps> 'chmod 600 /etc/nginx/ssl/ludosport.com.key'
 
 set -euo pipefail
 
@@ -26,13 +34,24 @@ rsync -avz --delete \
     out/ \
     "${VPS_USER}@${VPS_HOST}:${REMOTE_PATH}/"
 
+echo ""
 echo "✅ Deploy complete — https://ludosport.com"
 echo ""
-echo "Next steps on the VPS:"
-echo "  1. Copy nginx config:"
+echo "─── Cloudflare SSL/TLS checklist ───"
+echo "Dashboard → SSL/TLS → Overview: set to 'Full (strict)'"
+echo ""
+echo "If this is the first deploy, run these ONCE on the VPS:"
+echo ""
+echo "  1. Upload Origin CA certificate:"
+echo "     ssh ${VPS_USER}@${VPS_HOST} 'mkdir -p /etc/nginx/ssl'"
+echo "     scp ludosport.com.pem ${VPS_USER}@${VPS_HOST}:/etc/nginx/ssl/"
+echo "     scp ludosport.com.key ${VPS_USER}@${VPS_HOST}:/etc/nginx/ssl/"
+echo "     ssh ${VPS_USER}@${VPS_HOST} 'chmod 600 /etc/nginx/ssl/ludosport.com.key'"
+echo ""
+echo "  2. Install nginx config:"
 echo "     scp deploy/ludosport.nginx.conf ${VPS_USER}@${VPS_HOST}:/etc/nginx/sites-available/ludosport"
-echo "  2. Enable site:"
-echo "     ssh ${VPS_USER}@${VPS_HOST} 'ln -sf /etc/nginx/sites-available/ludosport /etc/nginx/sites-enabled/ && nginx -t && systemctl reload nginx'"
-echo "  3. Get HTTPS:"
-echo "     ssh ${VPS_USER}@${VPS_HOST} 'certbot --nginx -d ludosport.com -d www.ludosport.com'"
-echo "  4. Uncomment HTTPS section in nginx config and reload"
+echo "     ssh ${VPS_USER}@${VPS_HOST} 'ln -sf /etc/nginx/sites-available/ludosport /etc/nginx/sites-enabled/ && rm -f /etc/nginx/sites-enabled/default && nginx -t && systemctl reload nginx'"
+echo ""
+echo "  3. (Optional) Restrict to Cloudflare IPs only:"
+echo "     ssh ${VPS_USER}@${VPS_HOST} 'curl -s https://www.cloudflare.com/ips-v4/ | sed \"s/^/allow /; s/\$/;/\" > /etc/nginx/cloudflare-allow.conf && echo \"deny all;\" >> /etc/nginx/cloudflare-allow.conf'"
+echo "     Then uncomment the 'include /etc/nginx/cloudflare-allow.conf;' and 'deny all;' lines in the nginx config"
