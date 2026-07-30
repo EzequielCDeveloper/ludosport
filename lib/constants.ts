@@ -4,7 +4,8 @@ export const ACADEMY = {
   shortName: "DRAKE ACADEMY",
   whatsapp: "+526531649951",
   whatsappUrl: "https://wa.me/526531649951",
-  address: "Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora",
+  address:
+    "Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora",
   coordinates: { lat: 32.461111, lng: -114.795667 },
   /** Geo metadata string for meta tags: "lat;lng" */
   coordinatesMeta: "32.461111;-114.795667",
@@ -54,10 +55,10 @@ export const NAV_LINKS: NavLink[] = [
 
 // ─── StarWarsCrawl ───────────────────────────────────────
 export const CRAWL_TEXTS: string[] = [
-  "En una época donde las pantallas dominan el tiempo libre de los jóvenes...",
-  "Encontrar actividades que promuevan el ejercicio, la disciplina y la convivencia sana se ha vuelto más importante que nunca.",
-  "Por ello nace Drake Academy, un espacio dedicado al desarrollo físico y personal de niños, jóvenes y adultos mediante la práctica de LudoSport.",
-  "Una disciplina deportiva moderna que combina acondicionamiento físico, coordinación, estrategia, trabajo en equipo y autocontrol.",
+  "En una época donde las pantallas dominan el tiempo libre de los jóvenes... encontrar actividades que promuevan el ejercicio, la disciplina y la convivencia sana se ha vuelto más importante que nunca.",
+  "Por ello nace Drake Academy, un espacio dedicado al desarrollo físico y personal de niños, jóvenes y adultos mediante la práctica del LudoSport. Una disciplina deportiva moderna que combina acondicionamiento físico, coordinación, estrategia, trabajo en equipo y autocontrol.",
+  "Más que una fantasía, un duelo real.",
+  "El LudoSport es el arte del combate con sables de luz traído a la realidad. Lejos de las coreografías y los trucos visuales, es un esgrima deportivo, dinámico y genuino. Un camino donde empuñar un sable de luz deja de ser ficción para convertirse en una competencia real guiada por el honor, la destreza y el respeto mutuo; forjando así, tanto el cuerpo como el espíritu.",
 ];
 
 // ─── Actividades ─────────────────────────────────────────
@@ -66,7 +67,8 @@ export const ACTIVIDADES_SUBTITLE = "10 disciplinas que transforman";
 
 // ─── Map Section ─────────────────────────────────────────
 export const MAP_STRINGS = {
-  popupHtml: "<strong>Drake Academy</strong><br/>LudoSport San Luis Río Colorado",
+  popupHtml:
+    "<strong>Drake Academy</strong><br/>LudoSport San Luis Río Colorado",
   loadingText: "Cargando mapa...",
   errorTitle: "No se pudo cargar el mapa",
   fallbackLinkText: "Ver en Google Maps",
@@ -77,9 +79,10 @@ export const PROFESOR = {
   heading: "EL MAESTRO",
   name: "Maestro Vazquez",
   quote: "El verdadero dominio comienza con el dominio de uno mismo",
-  bio: "Fundador de Ludo Sport Drake Academy, el Maestro Vazquez ha dedicado su vida a la enseñanza del sable de madera como herramienta de formación integral. Su metodología combina técnicas clásicas de esgrima con principios de desarrollo personal, creando un entorno donde cada alumno descubre su potencial atlético y su fuerza interior.",
+  bio: "Fundador de Ludo Sport Drake Academy, el Maestro Vazquez posee formacion en la enseñanza del arte del sable como herramienta de formación integral. Su metodología combina técnicas clásicas de ludosport con principios de desarrollo personal, creando un entorno donde cada alumno descubre su potencial atlético y su fuerza interior.",
   imageSrc: "/photos/profesor.webp",
-  imageAlt: "Instructor de esgrima con sable de madera junto a un alumno en el área de entrenamiento de Drake Academy",
+  imageAlt:
+    "Instructor de esgrima con sable de madera junto a un alumno en el área de entrenamiento de Drake Academy",
 } as const;
 
 // ─── Valores ─────────────────────────────────────────────
@@ -131,49 +134,56 @@ export const ACTIVIDADES: Actividad[] = [
     title: "Entrenamiento Técnico Progresivo",
     text: "Plan de formación escalonado que va de lo fundamental a lo avanzado. Cada etapa construye sobre la anterior, asegurando una base sólida antes de avanzar al siguiente nivel.",
     image: "/photos/actividad_01.webp",
-    imageAlt: "Grupo de niños entrenando técnicas de sable de madera en formación",
+    imageAlt:
+      "Grupo de niños entrenando técnicas de sable de madera en formación",
   },
   {
     num: 2,
     title: "Ejercicios de Coordinación y Reacción",
     text: "Ejercicios específicos que desarrollan la sincronización de movimientos y los reflejos. El cuerpo aprende a reaccionar con velocidad y precisión ante cualquier estímulo del combate.",
     image: "/photos/actividad_02.webp",
-    imageAlt: "Instructor guiando a un alumno en ejercicios de coordinación con sable",
+    imageAlt:
+      "Instructor guiando a un alumno en ejercicios de coordinación con sable",
   },
   {
     num: 3,
     title: "Acondicionamiento Físico Adaptado",
     text: "Preparación física diseñada según la edad y nivel de cada alumno. Trabajamos fuerza, resistencia y flexibilidad de forma segura y progresiva para que el cuerpo esté listo para el combate.",
     image: "/photos/actividad_03.webp",
-    imageAlt: "Alumno recuperando el aliento después de una sesión de acondicionamiento físico",
+    imageAlt:
+      "Alumno recuperando el aliento después de una sesión de acondicionamiento físico",
   },
   {
     num: 4,
     title: "Técnicas de Respiración y Concentración",
     text: "Ejercicios de respiración consciente que enseñan a mantener la calma y la concentración bajo presión. Dominar el aire es dominar la mente y el combate.",
     image: "/photos/actividad_04.webp",
-    imageAlt: "Alumno practicando técnicas de respiración guiado por el instructor",
+    imageAlt:
+      "Alumno practicando técnicas de respiración guiado por el instructor",
   },
   {
     num: 5,
     title: "Juegos Estratégicos y Trabajo en Equipo",
     text: "Actividades lúdicas que desarrollan el pensamiento táctico y la colaboración. Los alumnos aprenden a crear estrategias y a confiar en sus compañeros.",
     image: "/photos/actividad_05.webp",
-    imageAlt: "Niños resolviendo desafíos estratégicos en equipo durante el entrenamiento",
+    imageAlt:
+      "Niños resolviendo desafíos estratégicos en equipo durante el entrenamiento",
   },
   {
     num: 6,
     title: "Combates Controlados y Supervisados",
     text: "Práctica de combate en un entorno seguro con equipo de protección y supervisión constante. Cada duelo es guiado para maximizar el aprendizaje sin riesgos.",
     image: "/photos/actividad_03.webp",
-    imageAlt: "Alumno hidratándose después de un combate controlado y supervisado",
+    imageAlt:
+      "Alumno hidratándose después de un combate controlado y supervisado",
   },
   {
     num: 7,
     title: "Misiones y Retos de Entrenamiento",
     text: "Desafíos temáticos que combinan habilidades técnicas, creatividad y toma de decisiones. Cada misión es una aventura diseñada para superar límites.",
     image: "/photos/actividad_07.webp",
-    imageAlt: "Instructor explicando una misión de entrenamiento a un alumno atento",
+    imageAlt:
+      "Instructor explicando una misión de entrenamiento a un alumno atento",
   },
   {
     num: 8,
@@ -187,14 +197,16 @@ export const ACTIVIDADES: Actividad[] = [
     title: "Torneos Amistosos",
     text: "Competencias internas entre compañeros que fomentan el compañerismo y el espíritu deportivo. El verdadero premio es la experiencia y el crecimiento compartido.",
     image: "/photos/actividad_09.webp",
-    imageAlt: "Niños celebrando después de un torneo amistoso de esgrima con sables",
+    imageAlt:
+      "Niños celebrando después de un torneo amistoso de esgrima con sables",
   },
   {
     num: 10,
     title: "Eventos Especiales para Alumnos y Familias",
     text: "Exhibiciones, convivencias y celebraciones que invitan a las familias a ser parte activa del camino de sus hijos. La academia es una comunidad que trasciende el entrenamiento.",
     image: "/photos/actividad_05.webp",
-    imageAlt: "Familias reunidas en un evento especial de la academia con alumnos e instructores",
+    imageAlt:
+      "Familias reunidas en un evento especial de la academia con alumnos e instructores",
   },
 ];
 
@@ -208,52 +220,102 @@ export interface FAQ {
 
 export const FAQS: FAQ[] = [
   {
+    question: "¿Por qué LudoSport?",
+    answerParts: [
+      {
+        type: "text",
+        content:
+          "LudoSport ofrece ejercicio físico completo sin impacto articular, ideal para todas las edades. Desarrolla disciplina, concentración y autocontrol a través de una práctica estructurada. El ambiente es seguro: utilizamos sables de madera sin filo y todas las prácticas de combate son supervisadas. El sistema de rangos premia el esfuerzo y la constancia, y nuestra comunidad es inclusiva para niños y jóvenes desde los 7 años.",
+      },
+    ],
+  },
+  {
     question: "¿Necesito experiencia previa?",
     answerParts: [
-      { type: "text", content: "No, absolutamente no. Nuestro programa está diseñado desde cero para principiantes. Empezamos con fundamentos básicos y cada alumno avanza a su propio ritmo. Desde la primera clase aprenderás movimientos reales con sable de madera." },
+      {
+        type: "text",
+        content:
+          "No, absolutamente no. Nuestro programa está diseñado desde cero para principiantes. Empezamos con fundamentos básicos y cada alumno avanza a su propio ritmo. Desde la primera clase aprenderás movimientos reales con sable de madera.",
+      },
     ],
   },
   {
     question: "¿Qué incluye la primera clase gratis?",
     answerParts: [
-      { type: "text", content: "La primera clase incluye: introducción a la esgrima con sable de madera, calentamiento guiado, técnica básica de agarre y postura, ejercicios de desplazamiento y un duelo de práctica supervisado. Te prestamos el equipo necesario. Solo trae ropa cómoda y muchas ganas." },
+      {
+        type: "text",
+        content:
+          "La primera clase incluye: introducción a la esgrima con sable de madera, calentamiento guiado, técnica básica de agarre y postura, ejercicios de desplazamiento y un duelo de práctica supervisado. Te prestamos el equipo necesario. Solo trae ropa cómoda y muchas ganas.",
+      },
     ],
   },
   {
     question: "¿Cuáles son los horarios y costos?",
     answerParts: [
       { type: "strong", content: "Horarios:" },
-      { type: "text", content: " Jueves y Viernes de 5:00 a 7:00 pm, Sábados de 4:30 a 7:00 pm. " },
+      {
+        type: "text",
+        content:
+          " Jueves y Viernes de 5:00 a 7:00 pm, Sábados de 4:30 a 7:00 pm. ",
+      },
       { type: "strong", content: "Costos:" },
-      { type: "text", content: " Primera clase completamente gratis. $200 la primera semana. $300 semanal después. 50% de descuento para el segundo hermano." },
+      {
+        type: "text",
+        content:
+          " Primera clase completamente gratis. $200 la primera semana. $300 semanal después. 50% de descuento para el segundo hermano.",
+      },
     ],
   },
   {
     question: "¿Dónde están ubicados?",
     answerParts: [
-      { type: "text", content: "Nos encontramos en Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora. Es una ubicación céntrica y de fácil acceso. Contamos con espacio techado y todas las medidas de seguridad necesarias." },
+      {
+        type: "text",
+        content:
+          "Nos encontramos en Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora. Es una ubicación céntrica y de fácil acceso. Contamos con espacio techado y todas las medidas de seguridad necesarias.",
+      },
     ],
   },
   {
     question: "¿Hay clases para diferentes edades?",
     answerParts: [
-      { type: "text", content: "Sí. Trabajamos con dos segmentos principales: niños (de 7 a 12 años) y jóvenes (de 13 años en adelante). Adaptamos la intensidad, la técnica y los ejercicios según el grupo de edad, asegurando que cada alumno reciba la atención que necesita." },
+      {
+        type: "text",
+        content:
+          "Sí. Trabajamos con dos segmentos principales: niños (de 7 a 12 años) y jóvenes (de 13 años en adelante). Adaptamos la intensidad, la técnica y los ejercicios según el grupo de edad, asegurando que cada alumno reciba la atención que necesita.",
+      },
     ],
   },
   {
     question: "¿Cómo funcionan los rangos?",
     answerParts: [
-      { type: "text", content: "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría. " },
+      {
+        type: "text",
+        content:
+          "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría. ",
+      },
       { type: "strong", content: "Importante: " },
-      { type: "text", content: "el tiempo para avanzar entre rangos varía según cada alumno — no hay un plazo fijo. La evaluación es individual y depende del progreso técnico, la asistencia y la actitud." },
+      {
+        type: "text",
+        content:
+          "el tiempo para avanzar entre rangos varía según cada alumno — no hay un plazo fijo. La evaluación es individual y depende del progreso técnico, la asistencia y la actitud.",
+      },
     ],
   },
   {
     question: "¿Es seguro practicar esgrima con sables de madera?",
     answerParts: [
-      { type: "text", content: "Sí, completamente. Los sables que utilizamos son de madera sin filo — no cortan. El entrenamiento incluye equipo de protección (careta y guantes) y todas las prácticas de combate son supervisadas por el instructor. El riesgo de lesión es comparable al de cualquier deporte de contacto controlado como karate o esgrima olímpica. " },
+      {
+        type: "text",
+        content:
+          "Sí, completamente. Los sables que utilizamos son de madera sin filo — no cortan. El entrenamiento incluye equipo de protección (careta y guantes) y todas las prácticas de combate son supervisadas por el instructor. El riesgo de lesión es comparable al de cualquier deporte de contacto controlado como karate o esgrima olímpica. ",
+      },
       { type: "strong", content: "Requisitos de seguridad: " },
-      { type: "text", content: "los alumnos deben usar ropa cómoda, traer agua, y los menores de edad requieren autorización firmada de padre o tutor antes de la primera clase." },
+      {
+        type: "text",
+        content:
+          "los alumnos deben usar ropa cómoda, traer agua, y los menores de edad requieren autorización firmada de padre o tutor antes de la primera clase.",
+      },
     ],
   },
 ];

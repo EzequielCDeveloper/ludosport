@@ -17,9 +17,9 @@ describe("StarWarsCrawl Component", () => {
     render(<StarWarsCrawl />);
     
     expect(screen.getByText(/En una época donde las pantallas dominan/)).toBeInTheDocument();
-    expect(screen.getByText(/Encontrar actividades que promuevan/)).toBeInTheDocument();
     expect(screen.getByText(/Por ello nace Drake Academy/)).toBeInTheDocument();
-    expect(screen.getByText(/Una disciplina deportiva moderna/)).toBeInTheDocument();
+    expect(screen.getByText(/Más que una fantasía/)).toBeInTheDocument();
+    expect(screen.getByText(/El LudoSport es el arte del combate/)).toBeInTheDocument();
   });
 
   it("should NOT have skip button", () => {
@@ -66,9 +66,9 @@ describe("StarWarsCrawl Component", () => {
     
     const paragraphs = screen.getAllByText(/./).filter(el => 
       el.textContent?.includes("En una época") || 
-      el.textContent?.includes("Encontrar actividades") ||
       el.textContent?.includes("Por ello nace") ||
-      el.textContent?.includes("Una disciplina")
+      el.textContent?.includes("Más que una fantasía") ||
+      el.textContent?.includes("El LudoSport es el arte")
     );
     
     paragraphs.forEach(p => {
