@@ -34,7 +34,7 @@ export default function Rangos() {
                 <h3 className="font-display text-xl text-white mb-2">
                   {rango.titulo}
                 </h3>
-                <p className="font-body text-sm text-white leading-relaxed">
+                <p className="font-body text-sm text-white leading-relaxed text-justify">
                   {rango.descripcion}
                 </p>
               </div>

@@ -15,7 +15,7 @@ export default function ValueCard({ title, text, icon: Icon, color }: ValueCardP
     >
       <Icon className="w-12 h-12 mb-4 text-[var(--color-yellow)]" aria-hidden="true" />
       <h3 className="text-xl font-display text-white mb-2">{title}</h3>
-      <p className="text-white font-body leading-relaxed">
+      <p className="text-white font-body leading-relaxed text-justify">
         {text}
       </p>
     </article>

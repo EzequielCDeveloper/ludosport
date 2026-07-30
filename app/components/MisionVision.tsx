@@ -16,7 +16,7 @@ export default function MisionVision() {
               MISIÓN
             </h3>
           </div>
-          <p className="font-body text-white text-lg md:text-xl leading-relaxed">
+          <p className="font-body text-white text-lg md:text-xl leading-relaxed text-justify">
             Brindar un ambiente seguro, estructurado y respetuoso donde cada
             alumno desarrolle habilidades físicas y personales que trasciendan
             el entrenamiento y potencien su vida cotidiana.
@@ -33,7 +33,7 @@ export default function MisionVision() {
               VISIÓN
             </h3>
           </div>
-          <p className="font-body text-white text-lg md:text-xl leading-relaxed">
+          <p className="font-body text-white text-lg md:text-xl leading-relaxed text-justify">
             Ser la academia donde cada alumno descubre una actividad que lo
             mantiene activo, aprende algo verdaderamente diferente y forja
             hábitos positivos que lo acompañan durante toda su vida.

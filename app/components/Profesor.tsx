@@ -57,7 +57,7 @@ export default function Profesor() {
             <blockquote className="font-display text-lg text-[var(--color-cyan)] italic border-l-4 border-[var(--color-cyan)] pl-6 mb-6">
               &ldquo;{PROFESOR.quote}&rdquo;
             </blockquote>
-            <p className="font-body text-white leading-relaxed">
+            <p className="font-body text-white leading-relaxed text-justify">
               {PROFESOR.bio}
             </p>
           </div>

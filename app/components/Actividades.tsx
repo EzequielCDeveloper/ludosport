@@ -90,7 +90,7 @@ export default function Actividades(): React.JSX.Element {
                 <h3 className="font-display text-lg tracking-wider uppercase text-white mb-2">
                   {actividad.title}
                 </h3>
-                <p className="font-body text-sm text-white leading-relaxed">
+                <p className="font-body text-sm text-white leading-relaxed text-justify">
                   {actividad.text}
                 </p>
               </div>

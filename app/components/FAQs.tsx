@@ -37,7 +37,7 @@ export default function FAQs() {
                 </svg>
               </summary>
               <div className="pb-5">
-                <p className="font-body text-base text-white leading-relaxed">
+                <p className="font-body text-base text-white leading-relaxed text-justify">
                   {faq.answerParts.map((part, i) =>
                     part.type === "strong" ? (
                       <strong key={i}>{part.content}</strong>
