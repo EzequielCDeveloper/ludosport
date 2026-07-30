@@ -8,7 +8,7 @@ const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' https://placehold.co https://*.basemaps.cartocdn.com https://*.openstreetmap.org;
+  img-src 'self' https://*.basemaps.cartocdn.com https://*.openstreetmap.org;
   font-src 'self';
   object-src 'none';
   base-uri 'self';
@@ -18,11 +18,7 @@ const cspHeader = `
 `;
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "placehold.co" },
-    ],
-  },
+  images: {},
   poweredByHeader: false,
   headers: async () => [
     {
