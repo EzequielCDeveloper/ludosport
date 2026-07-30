@@ -1,12 +1,13 @@
 ---
-last-reviewed: 2026-07-22
+last-reviewed: 2026-07-30
 ---
 
 # StarWarsCrawl — Refactor Proposal
 
-**Status**: proposal  
+**Status**: superseded  
 **Scope**: `app/components/StarWarsCrawl.tsx`  
-**Driver**: scroll-sync logic consolidated in a single `useEffect` with mixed responsibilities (layout measurement, opacity lerp, transform sync).
+**Resolution**: This refactor was NOT implemented. The component was instead simplified to **static text** — all scroll-driven animation, rAF loop, overlay, and skip button were removed entirely. See [`starwars-crawl-static-implementation.md`](./starwars-crawl-static-implementation.md) for the actual final implementation.  
+**Driver (original)**: scroll-sync logic consolidated in a single `useEffect` with mixed responsibilities (layout measurement, opacity lerp, transform sync).
 
 ---
 

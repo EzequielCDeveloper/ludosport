@@ -1,5 +1,5 @@
 ---
-last-reviewed: 2026-07-21
+last-reviewed: 2026-07-30
 ---
 
 # Developer Guide: Ludo Sport Drake Academy
@@ -25,8 +25,11 @@ bun install
 # Start the development server
 bun dev
 
-# Build for production
+# Build for production (static export)
 bun run build
+
+# Run unit/integration tests
+bun run test
 
 # Run the linter
 bun run lint
@@ -45,7 +48,7 @@ Components are **Server Components (SC)** by default. Use `"use client"` only wh
 - `useState`, `useEffect`, `useRef`, event handlers
 - Custom hooks that consume browser APIs
 - Dynamic browser-only imports (e.g., Leaflet)
-- `dangerouslySetInnerHTML`
+- `IntersectionObserver` or `requestAnimationFrame`
 
 Client Components (CC) are leaf nodes in the tree — they never wrap Server Components. See [`ARCHITECTURE.md`](../ARCHITECTURE.md) for the full boundary rationale.
 
@@ -54,16 +57,16 @@ Client Components (CC) are leaf nodes in the tree — they never wrap Server Com
 | Artifact | Convention | Example |
 |----------|-----------|---------|
 | Component files | PascalCase | `NavbarClient.tsx`, `StarWarsCrawl.tsx` |
-| CSS classes (Tailwind) | kebab-case | `hover:bg-red`, `sm:grid-cols-2` |
+| CSS classes (Tailwind) | Tailwind v4 utilities | `text-[var(--color-yellow)]`, `sm:grid-cols-2` |
 | CSS module classes | kebab-case (BEM-style) | `.stars__large`, `.rango-card--blue` |
-| Hook files | camelCase with `use` prefix | `useScrollNav.ts` |
-| Constants | UPPER_SNAKE_CASE | `NAV_LINKS`, `ACTIVIDADES` |
+| Hook files | camelCase with `use` prefix | `useScrollNav.ts`, `useFocusTrap.ts` |
+| Constants | UPPER_SNAKE_CASE | `NAV_LINKS`, `ACTIVIDADES`, `CRAWL_TEXTS` |
 
 ### Styling
 
 1. **Tailwind CSS 4** — primary approach. All layout, spacing, typography, colors, and responsive design use Tailwind utility classes. The theme lives in `globals.css` via `@theme inline` — no `tailwind.config.js`.
 2. **CSS Modules** — used only for complex animations that are impractical in Tailwind. Currently only `app/styles/starfield.module.css`.
-3. **Global CSS** (`app/globals.css`) — custom fonts (`@font-face`), keyframe animations (`fadeUp`, `fadeDown`, `bounceY`), component-specific overrides, and Leaflet dark theme overrides.
+3. **Global CSS** (`app/globals.css`) — custom fonts (`@font-face`), keyframe animations (`fadeUp`, `fadeDown`, `bounceY`), component-specific overrides, text-stroke with `@supports` progressive enhancement, and Leaflet dark theme overrides.
 
 ### TypeScript
 
@@ -73,6 +76,20 @@ Strict mode is enabled in `tsconfig.json`. The project uses path alias `@/*` →
 import Navbar from "@/app/components/Navbar";
 import { NAV_LINKS } from "@/lib/constants";
 ```
+
+## Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `bun dev` | Start development server (localhost:3000) |
+| `bun run build` | Static export to `out/` — type-check + compile + optimize |
+| `bun start` | Start production server |
+| `bun run preview` | Preview static export locally (`npx serve out/`) |
+| `bun run lint` | ESLint across the project |
+| `bun run test` | Vitest unit/integration tests |
+| `bun run test:watch` | Vitest in watch mode |
+| `bun run test:e2e` | Playwright E2E tests (requires `bun run build` first) |
+| `bun run deploy` | Deploy to Cloudflare via `deploy/deploy.sh` |
 
 ## How to Add a New Section
 
@@ -90,8 +107,8 @@ touch app/components/MyNewSection.tsx
 export default function MyNewSection() {
   return (
     <section id="my-section" className="py-16 px-4">
-      <h2 className="font-display text-3xl text-yellow">My New Section</h2>
-      <p className="font-body text-gray-aa">Content goes here.</p>
+      <h2 className="font-display text-3xl text-[var(--color-yellow)]">My New Section</h2>
+      <p className="font-body text-[var(--color-gray-aa)]">Content goes here.</p>
     </section>
   );
 }
@@ -110,7 +127,7 @@ import MyNewSection from "@/app/components/MyNewSection";
 <MyNewSection />
 ```
 
-The current section order (top to bottom) is: SkipLink, Starfield, Navbar, Hero, StarWarsCrawl, MisionVision, Valores, Profesor, Actividades, Rangos, FAQs, CtaFinal, MapSection, Footer, WhatsAppFloat.
+The current section order (top to bottom): SkipLink, ScrollProgress, Starfield, Navbar, Hero, StarWarsCrawl, MisionVision, Valores, Profesor, Actividades, Rangos, FAQs, CtaFinal, MapSection, Footer, WhatsAppFloat, BackToTop.
 
 ### 3. Add Constants (If Needed)
 
@@ -142,20 +159,30 @@ The section's `id` attribute must match the `href` (e.g., `#my-section` → `id=
 
 ## Build & Deployment
 
-### Production Build
+### Static Export
+
+The project uses Next.js `output: "export"` — the build produces pure static HTML/CSS/JS in `out/`. No Node.js server required in production.
 
 ```bash
 bun run build
+# Output: out/ (static files)
+# Images: unoptimized — served directly from /public
 ```
 
-Output directory: `.next/` (Next.js default). The build compiles all components, type-checks TypeScript, optimizes assets, and generates static pages.
+### Cloudflare Deployment
 
-**Netlify** handles deployment:
+The site is deployed via Cloudflare with a custom nginx proxy:
 
-- **Live URL**: [https://fluffy-lamington-27c3ae.netlify.app](https://fluffy-lamington-27c3ae.netlify.app)
-- **Build command**: `bun run build`
-- **Output directory**: `.next`
-- **Auto-deploy**: Every commit to the default branch triggers an automatic deploy
+- **Live URL**: `https://ludosport.com`
+- **Deploy script**: `deploy/deploy.sh` (syncs `out/` to the server and reloads nginx)
+- **Nginx config**: `deploy/ludosport.nginx.conf` (reverse proxy rules, headers, caching)
+- **CI/CD**: GitHub Actions runs `tsc`, lint, build, and tests on every push
+
+The proxy setup handles:
+- Static file serving with cache headers
+- HTTPS redirects
+- Custom 404 handling
+- Security headers (HSTS, X-Frame-Options, etc.)
 
 ## Code Style & Linting
 
@@ -169,6 +196,28 @@ bun run lint
 Configuration lives in `eslint.config.mjs`. The ignore list (`.next/`, `out/`, `build/`, `next-env.d.ts`) is defined via `globalIgnores`.
 
 TypeScript strict mode (`tsconfig.json` `"strict": true`) catches type-level issues during build — the linter and build together cover both style and type correctness.
+
+## Testing
+
+### Unit/Integration Tests
+
+```bash
+bun run test              # Vitest single run
+bun run test:watch        # Vitest watch mode
+```
+
+Test files: `app/components/__tests__/*.test.tsx`.
+
+Coverage: `FAQs.test.tsx`, `NavbarClient.test.tsx`, `StarWarsCrawl.test.tsx`.
+
+### E2E Tests
+
+```bash
+bun run test:e2e          # Playwright (requires build first)
+bun run build && bun run test:e2e
+```
+
+Test files: `tests/e2e/*.spec.ts`.
 
 ## Troubleshooting
 
@@ -229,3 +278,13 @@ const L = await import("leaflet");
 ```
 
 This is already handled in `MapSection.tsx`.
+
+### Static Export Limitations
+
+Since the project uses `output: "export"`, certain Next.js features are unavailable:
+
+- **No SSR/ISR/Streaming** — all pages are pre-rendered at build time
+- **No API Routes** — all data must be static or client-side
+- **No Middleware** — no `proxy.ts` or middleware rewrites
+- **No `next/image` optimization** — images use `unoptimized: true`
+- **No `cookies()` or `headers()`** in Server Components (forces dynamic rendering)
