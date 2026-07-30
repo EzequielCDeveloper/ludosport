@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ACADEMY, NAV_LINKS } from "@/lib/constants";
+import { ACADEMY, NAV_LINKS, LUDOSPORT_REFERENCES } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -18,12 +18,24 @@ export default function Footer() {
                 style={{ width: 36, height: 36 }}
               />
               <span className="font-star-jedi text-white text-lg tracking-wider">
-                DRAKE ACADEMY
+                Ludo Sport Drake Academy
               </span>
             </div>
-            <p className="font-body text-sm text-[var(--color-gray-aa)] italic leading-relaxed">
+            <p className="font-body text-sm text-[var(--color-gray-aa)] italic leading-relaxed mb-3">
               &ldquo;El verdadero dominio comienza con el dominio de uno
               mismo.&rdquo;
+            </p>
+            <p className="font-body text-xs text-[var(--color-gray-aa)]/60">
+              Academia afiliada a la red internacional de{" "}
+              <a
+                href={LUDOSPORT_REFERENCES.officialSite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-[var(--color-cyan)] transition-colors"
+              >
+                LudoSport
+              </a>
+              , disciplina deportiva originada en Italia.
             </p>
           </div>
 

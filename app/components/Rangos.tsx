@@ -41,6 +41,12 @@ export default function Rangos() {
             );
           })}
         </div>
+
+        <p className="font-body text-white/50 text-center text-xs max-w-lg mx-auto mt-8">
+          El avance entre rangos depende de evaluación individual. No hay un
+          tiempo fijo — cada alumno progresa a su propio ritmo según técnica,
+          asistencia y actitud.
+        </p>
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export default function StarWarsCrawl(): React.JSX.Element {
               LUDOSPORT
             </h2>
             <p className="font-display text-[var(--color-yellow)] text-base md:text-lg uppercase tracking-[0.3em]">
-              Drake Academy
+              Ludo Sport Drake Academy
             </p>
           </div>
 

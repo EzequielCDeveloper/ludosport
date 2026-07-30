@@ -18,7 +18,23 @@ export const ACADEMY = {
   },
   schedule: "Jue-Vie 5-7pm · Sáb 4:30-7pm",
   pricing: "1ra gratis · $200 MXN 1ra sem · $300 MXN semanal · 50% 2do hermano",
+  founded: 2014,
 };
+
+// ─── LudoSport ───────────────────────────────────────────
+/** External authoritative references for GEO citation (R02). */
+export const LUDOSPORT_REFERENCES = {
+  description:
+    "LudoSport es una disciplina deportiva internacional de esgrima con sables de madera," +
+    " originada en Italia. Combina técnica, estrategia y desarrollo personal en un formato" +
+    " competitivo y seguro. Drake Academy es una academia afiliada a la red internacional" +
+    " de LudoSport, operando en San Luis Río Colorado, Sonora, México.",
+  officialSite: "https://www.ludosport.net/",
+  networkNote:
+    "LudoSport cuenta con academias en más de 10 países. La metodología, los rangos y" +
+    " las técnicas están estandarizados internacionalmente, garantizando una formación" +
+    " consistente y de calidad en cada academia de la red.",
+} as const;
 
 // ─── Nav Links ─────────────────────────────────────────--
 export interface NavLink {
@@ -227,7 +243,17 @@ export const FAQS: FAQ[] = [
   {
     question: "¿Cómo funcionan los rangos?",
     answerParts: [
-      { type: "text", content: "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría." },
+      { type: "text", content: "Nuestro sistema tiene 5 rangos: Iniciado (I), Aprendiz (II), Guerrero (III), Guardián (IV) y Maestro (V). Se avanza mediante evaluaciones periódicas que miden técnica, conocimiento, actitud y espíritu de compañerismo. Cada rango representa un nivel creciente de responsabilidad y maestría. " },
+      { type: "strong", content: "Importante: " },
+      { type: "text", content: "el tiempo para avanzar entre rangos varía según cada alumno — no hay un plazo fijo. La evaluación es individual y depende del progreso técnico, la asistencia y la actitud." },
+    ],
+  },
+  {
+    question: "¿Es seguro practicar esgrima con sables de madera?",
+    answerParts: [
+      { type: "text", content: "Sí, completamente. Los sables que utilizamos son de madera sin filo — no cortan. El entrenamiento incluye equipo de protección (careta y guantes) y todas las prácticas de combate son supervisadas por el instructor. El riesgo de lesión es comparable al de cualquier deporte de contacto controlado como karate o esgrima olímpica. " },
+      { type: "strong", content: "Requisitos de seguridad: " },
+      { type: "text", content: "los alumnos deben usar ropa cómoda, traer agua, y los menores de edad requieren autorización firmada de padre o tutor antes de la primera clase." },
     ],
   },
 ];

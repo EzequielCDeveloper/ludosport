@@ -1,4 +1,4 @@
-import { ACADEMY, ACTIVIDADES, FAQS } from "@/lib/constants";
+import { ACADEMY, ACTIVIDADES, FAQS, LUDOSPORT_REFERENCES } from "@/lib/constants";
 
 export function generateLocalBusiness(): string {
   const schema: Record<string, unknown> = {
@@ -50,6 +50,7 @@ export function generateLocalBusiness(): string {
           ACADEMY.sameAs.facebook,
           ACADEMY.sameAs.instagram,
           ACADEMY.sameAs.tiktok,
+          LUDOSPORT_REFERENCES.officialSite,
         ],
         knowsAbout: [
           "Esgrima deportiva con sables de madera",

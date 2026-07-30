@@ -8,9 +8,9 @@ describe("StarWarsCrawl Component", () => {
     expect(screen.getByText("LUDOSPORT")).toBeInTheDocument();
   });
 
-  it("should render Drake Academy subtitle", () => {
+  it("should render Ludo Sport Drake Academy subtitle", () => {
     render(<StarWarsCrawl />);
-    expect(screen.getByText("Drake Academy")).toBeInTheDocument();
+    expect(screen.getByText("Ludo Sport Drake Academy")).toBeInTheDocument();
   });
 
   it("should render all content paragraphs", () => {
@@ -56,7 +56,7 @@ describe("StarWarsCrawl Component", () => {
   it("should have Star Wars styling on subtitle", () => {
     render(<StarWarsCrawl />);
     
-    const subtitle = screen.getByText("Drake Academy");
+    const subtitle = screen.getByText("Ludo Sport Drake Academy");
     expect(subtitle).toHaveClass("font-display");
     expect(subtitle).toHaveClass("text-[var(--color-yellow)]");
   });
