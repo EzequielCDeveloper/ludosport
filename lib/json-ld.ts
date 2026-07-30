@@ -5,7 +5,7 @@ export function generateLocalBusiness(): string {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "SportsActivityLocation"],
         "@id": "https://ludosport.com/#business",
         name: "Ludo Sport Drake Academy",
         description:
@@ -44,7 +44,7 @@ export function generateLocalBusiness(): string {
         areaServed: {
           "@type": "City",
           name: "San Luis Río Colorado",
-          sameAs: "https://en.wikipedia.org/wiki/San_Luis_R%C3%ADo_Colorado",
+          sameAs: "https://es.wikipedia.org/wiki/San_Luis_R%C3%ADo_Colorado",
         },
         sameAs: [
           ACADEMY.sameAs.facebook,
@@ -53,11 +53,11 @@ export function generateLocalBusiness(): string {
         ],
         knowsAbout: [
           "Esgrima deportiva con sables de madera",
-          "Artes marciales",
+          "Esgrima deportiva",
+          "Entrenamiento de coordinación",
+          "Deporte de combate",
+          "Acondicionamiento físico juvenil",
           "Entrenamiento de reflejos",
-          "Defensa personal",
-          "Acondicionamiento atlético",
-          "Meditación activa",
         ],
         parentOrganization: {
           "@type": "Organization",

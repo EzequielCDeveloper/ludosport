@@ -17,9 +17,29 @@ const exo2 = Exo_2({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ludosport.com"),
   title: "Ludo Sport Drake Academy — Esgrima con Sables de Madera",
   description:
     "Academia de esgrima deportiva con sables de madera. Clases para niños y jóvenes en San Luis Río Colorado. Primer clase gratis.",
+  applicationName: "Ludo Sport Drake Academy",
+  keywords: [
+    "esgrima deportiva",
+    "sables de madera",
+    "LudoSport",
+    "Drake Academy",
+    "San Luis Río Colorado",
+    "clases de esgrima",
+    "niños",
+    "jóvenes",
+    "academia deportiva",
+    "Sonora",
+  ],
+  alternates: {
+    canonical: "https://ludosport.com",
+    languages: {
+      "es-MX": "https://ludosport.com",
+    },
+  },
   openGraph: {
     title: "Ludo Sport Drake Academy — Esgrima con Sables de Madera",
     description:
@@ -37,13 +57,21 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: "https://ludosport.com/logo.jpeg",
+        alt: "Ludo Sport Drake Academy — Esgrima con Sables de Madera",
+      },
+    ],
+  },
   other: {
     "geo.region": "MX-SON",
     "geo.placename": "San Luis Río Colorado",
     "geo.position": ACADEMY.coordinatesMeta,
     ICBM: ACADEMY.coordinatesICBM,
     "places:location": ACADEMY.coordinatesMeta.replace(";", ","),
-    "twitter:card": "summary",
   },
 };
 
