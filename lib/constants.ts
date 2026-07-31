@@ -3,6 +3,8 @@ export const ACADEMY = {
   name: "Ludo Sport Drake Academy",
   shortName: "DRAKE ACADEMY",
   whatsapp: "+526531649951",
+  /** Formato legible: "+52 653 164 9951" */
+  whatsappFormatted: "+52 653 164 9951",
   whatsappUrl: "https://wa.me/526531649951",
   address:
     "Callejón Jalisco, entre Soto y Pesqueira, San Luis Río Colorado, Sonora",
@@ -21,6 +23,10 @@ export const ACADEMY = {
   pricing: "1ra gratis · $200 MXN 1ra sem · $300 MXN semanal · 50% 2do hermano",
   founded: 2014,
 };
+
+// ─── Footer ─────────────────────────────────────────────
+export const FOOTER_TAGLINE =
+  "El verdadero dominio comienza con el dominio de uno mismo.";
 
 // ─── LudoSport ───────────────────────────────────────────
 /** External authoritative references for GEO citation (R02). */

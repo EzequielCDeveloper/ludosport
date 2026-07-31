@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { ACADEMY, NAV_LINKS, LUDOSPORT_REFERENCES } from "@/lib/constants";
+import Link from "next/link";
+import { ACADEMY, NAV_LINKS, LUDOSPORT_REFERENCES, FOOTER_TAGLINE } from "@/lib/constants";
 
-export default function Footer() {
+export default function Footer(): React.JSX.Element {
   return (
     <footer className="bg-black border-t border-[var(--color-black-3)] pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,15 +16,13 @@ export default function Footer() {
                 width={36}
                 height={36}
                 className="rounded-sm"
-                style={{ width: 36, height: 36 }}
               />
               <span className="font-star-jedi text-white text-lg tracking-wider">
                 Ludo Sport Drake Academy
               </span>
             </div>
             <p className="font-body text-sm text-[var(--color-gray-aa)] italic leading-relaxed mb-3 text-justify">
-              &ldquo;El verdadero dominio comienza con el dominio de uno
-              mismo.&rdquo;
+              &ldquo;{FOOTER_TAGLINE}&rdquo;
             </p>
             <p className="font-body text-xs text-[var(--color-gray-aa)]/60 text-justify">
               Para más información consultar a la red internacional de{" "}
@@ -65,7 +64,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 mb-5">
               <p className="font-body text-sm text-white/70">
-                WhatsApp: +52 653 164 9951
+                WhatsApp: {ACADEMY.whatsappFormatted}
               </p>
               <p className="font-body text-sm text-white/70 leading-relaxed">
                 {ACADEMY.address}
@@ -140,8 +139,14 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-[var(--color-black-3)] pt-8 text-center">
           <p className="font-body text-xs text-[var(--color-gray-aa)]">
-            &copy; 2026 Ludo Sport Drake Academy. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} {ACADEMY.name}. Todos los derechos reservados.
           </p>
+          <Link
+            href="/privacidad"
+            className="inline-block mt-2 font-body text-xs text-[var(--color-gray-aa)]/60 hover:text-[var(--color-cyan)] transition-colors"
+          >
+            Aviso de Privacidad
+          </Link>
         </div>
       </div>
     </footer>
