@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Anton, Exo_2 } from "next/font/google";
 import { generateLocalBusiness } from "@/lib/json-ld";
 import { ACADEMY } from "@/lib/constants";
@@ -91,6 +92,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NX9TG3HT6K"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NX9TG3HT6K');`}
+        </Script>
         {children}
       </body>
     </html>
